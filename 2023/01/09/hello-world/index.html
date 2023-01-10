@@ -370,31 +370,30 @@
 
 
 
-  <div id="giteement-ctn"></div>
+
   
-    <link rel="stylesheet" href="/lib/default.css">
-    <script src="/lib/giteement.browser.js"></script>
+  <div id="gitment-ctn"></div>
+  
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
   
   <script>
-  <!-- id: "Hello World" -->
-  var giteement = new Giteement({
-    id: '20230109150514',
-    owner: 'ruei',
-    repo: 'GitHubComment',
-    backcall_uri: 'https://zzruei.github.io/',
-    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
-    oauth: {
-      client_id: '4d3aa3aade400ee0158bc194e48990b04978fc72998b6f479f659ac953a07322',
-      client_secret: 'f4926932d2dac92754b2cf73c251d79dd243c178f2844c4912e71fb1752e1a4c'
-    },
-  })
-  giteement.render('giteement-ctn')
+    <!-- id: "Hello World" -->
+    var gitment = new Gitment({
+      id: "20230109150514",
+      owner: 'zzruei',
+      repo: 'GitHubComment',
+      oauth: {
+        client_id: '938ced57b90c15b1f5fa',
+        client_secret: '925f9739de1d7ba44b95d96a10c7b0ed7a9d8467',
+      },
+    })
+    gitment.render('gitment-ctn')
   </script>
 
 
-
-
-
+  
 
 
 
