@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zzruei.github.io">
-  <title>Archives | zzruei小基地</title>
+  <title>mysql用户与权限管理 | zzruei小基地</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="这是zzr搭建的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zzruei小基地">
-<meta property="og:url" content="http://zzruei.github.io/archives/index.html">
+  <meta name="description" content="说明：   用户由‘username‘@’hostname’组成 角色由‘role_name‘@’host_name’组成 只要你创建了一个用户或角色，系统就会自动给你一个“USAGE”权限，意思是连接登录数据库的权限">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql用户与权限管理">
+<meta property="og:url" content="http://zzruei.github.io/2023/01/11/mysql-%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/index.html">
 <meta property="og:site_name" content="zzruei小基地">
-<meta property="og:description" content="这是zzr搭建的博客">
+<meta property="og:description" content="说明：   用户由‘username‘@’hostname’组成 角色由‘role_name‘@’host_name’组成 只要你创建了一个用户或角色，系统就会自动给你一个“USAGE”权限，意思是连接登录数据库的权限">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-11T13:47:20.163Z">
+<meta property="article:modified_time" content="2023-01-13T14:47:07.248Z">
 <meta property="article:author" content="zzr">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="zzruei小基地" type="application/atom+xml">
@@ -186,92 +189,185 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-mysql-用户与权限管理" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/01/12/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E5%8D%95%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-        <time datetime="2023-01-12T06:03:21.446Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-12</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/01/12/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E5%8D%95%E9%93%BE%E8%A1%A8/" target="_blank">单链表</a>
   
+    <h1 class="article-title" itemprop="name">
+      mysql用户与权限管理
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线性表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2023/01/11/mysql-%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" class="archive-article-date">
         <time datetime="2023-01-11T13:47:20.163Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-11</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/01/11/mysql-%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" target="_blank">mysql用户与权限管理</a>
   
-    </h1>
-  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">908字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
 
 
-        <div class="article-info info-on-right">
-          
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>说明： </p>
+<ul>
+<li>用户由‘username‘@’hostname’组成</li>
+<li>角色由‘role_name‘@’host_name’组成</li>
+<li>只要你创建了一个用户或角色，系统就会自动给你一个“USAGE”权限，意思是连接登录数据库的权限</li>
+</ul>
+<span id="more"></span>
+
+<p><strong>1.</strong> <strong>创建用户</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER 用户 [IDENTIFIED BY &#x27;密码&#x27;][,用户 [IDENTIFIED BY &#x27;密码&#x27;]];</span><br></pre></td></tr></table></figure>
+
+<p>举例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &#x27;zzr&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br><span class="line">CREATE USER zzr IDENTIFIED BY &#x27;123123&#x27;; # 默认host是 %</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.</strong> <strong>修改用户名</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UPDATE mysql.user SET user=&#x27;li4&#x27; WHERE user=&#x27;wang5&#x27;; </span><br><span class="line">FLUSH PRIVILEGES; #刷新权限</span><br></pre></td></tr></table></figure>
+<!--more-->
+<p><strong>3.</strong> <strong>删除用户</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP USER 用户[,用户]…;</span><br></pre></td></tr></table></figure>
+
+<p>举例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DROP USER &#x27;zzr&#x27;@&#x27;localhost&#x27;;</span><br><span class="line">DROP USER li4 ; # 默认删除host为%的用户</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.</strong> <strong>修改密码</strong></p>
+<p>方式一： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER 用户 IDENTIFIED BY &#x27;新密码&#x27;[,用户[IDENTIFIED BY &#x27;新密码&#x27;]]…;</span><br></pre></td></tr></table></figure>
+<p>说明：USER()函数可以获取当前用户，用户位置填USER()可以实现对当前用户密码的修改</p>
+<p>方式二：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET PASSWORD[FOR 用户]=&#x27;新密码&#x27;;</span><br></pre></td></tr></table></figure>
+<p>说明：不写[ ]部分默认修改当前用户，写[ ]部分可实现root用户对其他用户密码的修改</p>
+<p><strong>5.</strong> <strong>权限管理</strong></p>
+<h5 id="5-1-权限列表"><a href="#5-1-权限列表" class="headerlink" title="5.1 权限列表"></a><strong>5.1</strong> <strong>权限列表</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show privileges;</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-2-授予权限"><a href="#5-2-授予权限" class="headerlink" title="5.2 授予权限"></a><strong>5.2</strong> <strong>授予权限</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT 权限1,权限2,…权限n ON 数据库名称.表名称 TO 用户 [IDENTIFIED BY ‘密码口令’][WITH GRANT OPTION];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>WITH GRANT OPTION 表示用户赋予权限后可以给其他用户赋予自己持有的权限</li>
+<li>该权限如果发现没有该用户，则会直接新建一个用户。</li>
+<li>举例：给li4用户用本地命令行方式，授予atguigudb这个库下的所有表的插删改查的权限。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT SELECT,INSERT,DELETE,UPDATE ON atguigudb.* TO li4@localhost;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>举例：授予通过网络方式登录的joe用户 ，对所有库所有表的全部权限，密码设为123。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO joe@&#x27;%&#x27; IDENTIFIED BY &#x27;123&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-3-查看权限"><a href="#5-3-查看权限" class="headerlink" title="5.3 查看权限"></a><strong>5.3</strong> <strong>查看权限</strong></h5><ul>
+<li>查看当前用户权限</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SHOW GRANTS; </span><br><span class="line"># 或 </span><br><span class="line">SHOW GRANTS FOR CURRENT_USER; </span><br><span class="line"># 或 </span><br><span class="line">SHOW GRANTS FOR CURRENT_USER();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看某用户的全局权限</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW GRANTS FOR 用户;</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-4-收回权限"><a href="#5-4-收回权限" class="headerlink" title="5.4 收回权限"></a><strong>5.4</strong> <strong>收回权限</strong></h5><p><strong>注意：在将用户账户从user表删除之前，应该收回相应用户的所有权限。</strong></p>
+<ul>
+<li>收回权限命令</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REVOKE 权限1,权限2,…权限n ON 数据库名称.表名称 FROM 用户;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>举例</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#收回全库全表的所有权限 </span><br><span class="line">REVOKE ALL PRIVILEGES ON *.* FROM joe@&#x27;%&#x27;; </span><br><span class="line">#收回mysql库下的所有表的插删改查权限 </span><br><span class="line">REVOKE SELECT,INSERT,UPDATE,DELETE ON mysql.* FROM joe@localhost;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意：须用户重新登录后才能生效</li>
+</ul>
+<h4 id="6-角色管理"><a href="#6-角色管理" class="headerlink" title="6. 角色管理"></a><strong>6.</strong> <strong>角色管理</strong></h4><h5 id="6-1-创建角色"><a href="#6-1-创建角色" class="headerlink" title="6.1 创建角色"></a><strong>6.1</strong> <strong>创建角色</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE ROLE 角色1 [,角色2]...</span><br></pre></td></tr></table></figure>
+
+<p>如果host_name省略，默认为%，role_name不可省略</p>
+<h5 id="6-2-给角色赋予权限"><a href="#6-2-给角色赋予权限" class="headerlink" title="6.2 给角色赋予权限"></a><strong>6.2</strong> <strong>给角色赋予权限</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT 权限名 ON 数据库名称.表名称 TO 角色;</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-3-查看角色的权限"><a href="#6-3-查看角色的权限" class="headerlink" title="6.3 查看角色的权限"></a><strong>6.3</strong> <strong>查看角色的权限</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW GRANTS FOR 角色;</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-4-回收角色的权限"><a href="#6-4-回收角色的权限" class="headerlink" title="6.4 回收角色的权限"></a><strong>6.4</strong> <strong>回收角色的权限</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REVOKE 权限名 ON 数据库名称.表名称 FROM 角色;</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-5-删除角色"><a href="#6-5-删除角色" class="headerlink" title="6.5 删除角色"></a><strong>6.5</strong> <strong>删除角色</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP ROLE 角色1 [,角色2]...</span><br></pre></td></tr></table></figure>
+
+<p>注意：如果你删除了角色，那么用户也就失去了通过这个角色所获得的所有权限</p>
+<h5 id="6-6-给用户赋予角色"><a href="#6-6-给用户赋予角色" class="headerlink" title="6.6 给用户赋予角色"></a><strong>6.6</strong> <strong>给用户赋予角色</strong></h5><p>角色创建并授权后，要赋给用户并处于激活状态才能发挥作用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT 角色1 [,角色2,...] TO 用户1 [,用户2,...];</span><br></pre></td></tr></table></figure>
+
+<p>查询当前已激活的角色</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT CURRENT_ROLE();</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-7-激活角色"><a href="#6-7-激活角色" class="headerlink" title="6.7 激活角色"></a><strong>6.7</strong> <strong>激活角色</strong></h5><p><strong>方式1：使用set default role 命令激活角色</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET DEFAULT ROLE ALL TO 用户;</span><br></pre></td></tr></table></figure>
+
+<p><strong>方式2：将activate_all_roles_on_login设置为ON</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET GLOBAL activate_all_roles_on_login=ON;</span><br></pre></td></tr></table></figure>
+
+<p>这条 SQL 语句的意思是，对所有角色永久激活</p>
+<h5 id="6-8-撤销用户的角色"><a href="#6-8-撤销用户的角色" class="headerlink" title="6.8 撤销用户的角色"></a><strong>6.8</strong> <strong>撤销用户的角色</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REVOKE 角色 FROM 用户;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>以上来自资料整理</p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          zzr
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://zzruei.github.io/2023/01/11/mysql-用户与权限管理/" title="mysql用户与权限管理" target="_blank">http://zzruei.github.io/2023/01/11/mysql-用户与权限管理/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -283,70 +379,116 @@
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zzruei.github.io/2023/01/11/mysql-%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/01/11/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%A1%BA%E5%BA%8F%E8%A1%A8/" class="archive-article-date">
-        <time datetime="2023-01-11T06:41:35.431Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-11</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/2023/01/12/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E5%8D%95%E9%93%BE%E8%A1%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          单链表
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/11/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%A1%BA%E5%BA%8F%E8%A1%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">顺序表</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/01/11/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%A1%BA%E5%BA%8F%E8%A1%A8/" target="_blank">顺序表</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线性表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">顺序表</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
+
+
+
 
 
           </div>
@@ -387,8 +529,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
