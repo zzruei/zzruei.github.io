@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="说明：   用户由‘username‘@’hostname’组成 角色由‘role_name‘@’host_name’组成 只要你创建了一个用户或角色，系统就会自动给你一个“USAGE”权限，意思是连接登录数据库的权限">
+  <meta name="description" content="说明：   用户由‘username‘@’hostname’组成 角色由‘role_name‘@’host_name’组成 只要你创建了一个用户或角色，系统就会自动给你一个“USAGE”权限，意思是连接登录数据库的权限  1. 创建用户1CREATE USER 用户 [IDENTIFIED BY &amp;#x27;密码&amp;#x27;][,用户 [IDENTIFIED BY &amp;#x27;密码&amp;#x27;]]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql用户与权限管理">
 <meta property="og:url" content="http://zzruei.github.io/2023/01/11/mysql-%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/index.html">
 <meta property="og:site_name" content="zzruei小基地">
-<meta property="og:description" content="说明：   用户由‘username‘@’hostname’组成 角色由‘role_name‘@’host_name’组成 只要你创建了一个用户或角色，系统就会自动给你一个“USAGE”权限，意思是连接登录数据库的权限">
+<meta property="og:description" content="说明：   用户由‘username‘@’hostname’组成 角色由‘role_name‘@’host_name’组成 只要你创建了一个用户或角色，系统就会自动给你一个“USAGE”权限，意思是连接登录数据库的权限  1. 创建用户1CREATE USER 用户 [IDENTIFIED BY &amp;#x27;密码&amp;#x27;][,用户 [IDENTIFIED BY &amp;#x27;密码&amp;#x27;]]">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-11T13:47:20.163Z">
-<meta property="article:modified_time" content="2023-01-14T17:44:29.626Z">
+<meta property="article:modified_time" content="2023-03-21T14:58:50.467Z">
 <meta property="article:author" content="zzr">
 <meta property="article:tag" content="mysql">
 <meta property="article:tag" content="用户权限管理">
@@ -249,12 +249,12 @@
 <li>角色由‘role_name‘@’host_name’组成</li>
 <li>只要你创建了一个用户或角色，系统就会自动给你一个“USAGE”权限，意思是连接登录数据库的权限</li>
 </ul>
-<span id="more"></span>
-
 <h3 id="1-创建用户"><a href="#1-创建用户" class="headerlink" title="1. 创建用户"></a><strong>1.</strong> <strong>创建用户</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER 用户 [IDENTIFIED BY &#x27;密码&#x27;][,用户 [IDENTIFIED BY &#x27;密码&#x27;]];</span><br></pre></td></tr></table></figure>
 
 <p>举例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &#x27;zzr&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br><span class="line">CREATE USER zzr IDENTIFIED BY &#x27;123123&#x27;; # 默认host是 %</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
 
 <h3 id="2-修改用户名"><a href="#2-修改用户名" class="headerlink" title="2. 修改用户名"></a><strong>2.</strong> <strong>修改用户名</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UPDATE mysql.user SET user=&#x27;li4&#x27; WHERE user=&#x27;wang5&#x27;; </span><br><span class="line">FLUSH PRIVILEGES; #刷新权限</span><br></pre></td></tr></table></figure>
 <!--more-->
@@ -694,6 +694,22 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">关系模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">并查集</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">工厂方法模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">简单工厂模式</a>
               </li>
             
             <div class="clearfix"></div>

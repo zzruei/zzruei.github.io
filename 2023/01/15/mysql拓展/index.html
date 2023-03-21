@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="拓展一：Linux下设置远程登录1. 确认网络 在远程机器上使用ping ip地址保证网络畅通  在远程机器上使用telnet命令保证端口号开放访问">
+  <meta name="description" content="拓展一：Linux下设置远程登录1. 确认网络 在远程机器上使用ping ip地址保证网络畅通  在远程机器上使用telnet命令保证端口号开放访问   2. 关闭防火墙或开放端口方式一：关闭防火墙  CentOS6 ：  1service iptables stop   CentOS7：  12345678910#开启防火墙systemctl start firewalld.service#查看">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql拓展">
 <meta property="og:url" content="http://zzruei.github.io/2023/01/15/mysql%E6%8B%93%E5%B1%95/index.html">
 <meta property="og:site_name" content="zzruei小基地">
-<meta property="og:description" content="拓展一：Linux下设置远程登录1. 确认网络 在远程机器上使用ping ip地址保证网络畅通  在远程机器上使用telnet命令保证端口号开放访问">
+<meta property="og:description" content="拓展一：Linux下设置远程登录1. 确认网络 在远程机器上使用ping ip地址保证网络畅通  在远程机器上使用telnet命令保证端口号开放访问   2. 关闭防火墙或开放端口方式一：关闭防火墙  CentOS6 ：  1service iptables stop   CentOS7：  12345678910#开启防火墙systemctl start firewalld.service#查看">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-14T16:14:32.776Z">
-<meta property="article:modified_time" content="2023-01-14T17:47:34.304Z">
+<meta property="article:modified_time" content="2023-03-21T14:58:28.321Z">
 <meta property="article:author" content="zzr">
 <meta property="article:tag" content="mysql">
 <meta property="article:tag" content="远程连接">
@@ -252,8 +252,6 @@
 <li><p>在远程机器上使用telnet命令<code>保证端口号开放</code>访问</p>
 </li>
 </ul>
-<span id="more"></span>
-
 <h6 id="2-关闭防火墙或开放端口"><a href="#2-关闭防火墙或开放端口" class="headerlink" title="2. 关闭防火墙或开放端口"></a><strong>2.</strong> <strong>关闭防火墙或开放端口</strong></h6><p>方式一：关闭防火墙</p>
 <ul>
 <li>CentOS6 ：</li>
@@ -264,6 +262,7 @@
 <li>CentOS7：</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#开启防火墙</span><br><span class="line">systemctl start firewalld.service</span><br><span class="line">#查看防火墙状态</span><br><span class="line">systemctl status firewalld.service</span><br><span class="line">#关闭防火墙</span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line">#设置开机启用防火墙 </span><br><span class="line">systemctl enable firewalld.service </span><br><span class="line">#设置开机禁用防火墙 </span><br><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 
 <p>方式二：开放端口</p>
 <ul>
@@ -712,6 +711,22 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">关系模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">并查集</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">工厂方法模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">简单工厂模式</a>
               </li>
             
             <div class="clearfix"></div>
