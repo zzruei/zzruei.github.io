@@ -6,25 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zzruei.github.io">
-  <title>mysql拓展 | zzruei小基地</title>
+  <title>Tag: 适配器模式 | zzruei小基地</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="拓展一：Linux下设置远程登录1. 确认网络 在远程机器上使用ping ip地址保证网络畅通  在远程机器上使用telnet命令保证端口号开放访问   2. 关闭防火墙或开放端口方式一：关闭防火墙  CentOS6 ：  1service iptables stop   CentOS7：  12345678910#开启防火墙systemctl start firewalld.service#查看">
-<meta property="og:type" content="article">
-<meta property="og:title" content="mysql拓展">
-<meta property="og:url" content="http://zzruei.github.io/2023/01/15/mysql%E6%8B%93%E5%B1%95/index.html">
+  <meta name="description" content="这是zzr搭建的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="zzruei小基地">
+<meta property="og:url" content="http://zzruei.github.io/tags/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="zzruei小基地">
-<meta property="og:description" content="拓展一：Linux下设置远程登录1. 确认网络 在远程机器上使用ping ip地址保证网络畅通  在远程机器上使用telnet命令保证端口号开放访问   2. 关闭防火墙或开放端口方式一：关闭防火墙  CentOS6 ：  1service iptables stop   CentOS7：  12345678910#开启防火墙systemctl start firewalld.service#查看">
+<meta property="og:description" content="这是zzr搭建的博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-14T16:14:32.776Z">
-<meta property="article:modified_time" content="2023-03-21T14:58:28.321Z">
 <meta property="article:author" content="zzr">
-<meta property="article:tag" content="mysql">
-<meta property="article:tag" content="远程连接">
-<meta property="article:tag" content="字符集">
-<meta property="article:tag" content="文件目录">
-<meta property="article:tag" content="密码安全策略">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="zzruei小基地" type="application/atom+xml">
@@ -193,320 +186,69 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mysql拓展" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-      <header class="article-header">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2023" class="archive-year">2023</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E8%AE%BE%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <time datetime="2023-04-18T08:36:25.487Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-18</time>
+</a>
+
+        </div>
+    	 
   
+    <h1 itemprop="name">
+	
+	  <a class="archive-article-title" href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E8%AE%BE%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" target="_blank">设计模式--适配器模式</a>
   
-    <h1 class="article-title" itemprop="name">
-      mysql拓展
     </h1>
   
 
 
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2023/01/15/mysql%E6%8B%93%E5%B1%95/" class="archive-article-date">
-        <time datetime="2023-01-14T16:14:32.776Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-15</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.1k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">4分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="拓展一：Linux下设置远程登录"><a href="#拓展一：Linux下设置远程登录" class="headerlink" title="拓展一：Linux下设置远程登录"></a><strong>拓展一：Linux下设置远程登录</strong></h3><h6 id="1-确认网络"><a href="#1-确认网络" class="headerlink" title="1. 确认网络"></a><strong>1.</strong> <strong>确认网络</strong></h6><ul>
-<li><p>在远程机器上使用ping ip地址<code>保证网络畅通</code></p>
-</li>
-<li><p>在远程机器上使用telnet命令<code>保证端口号开放</code>访问</p>
-</li>
-</ul>
-<h6 id="2-关闭防火墙或开放端口"><a href="#2-关闭防火墙或开放端口" class="headerlink" title="2. 关闭防火墙或开放端口"></a><strong>2.</strong> <strong>关闭防火墙或开放端口</strong></h6><p>方式一：关闭防火墙</p>
-<ul>
-<li>CentOS6 ：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service iptables stop</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>CentOS7：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#开启防火墙</span><br><span class="line">systemctl start firewalld.service</span><br><span class="line">#查看防火墙状态</span><br><span class="line">systemctl status firewalld.service</span><br><span class="line">#关闭防火墙</span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line">#设置开机启用防火墙 </span><br><span class="line">systemctl enable firewalld.service </span><br><span class="line">#设置开机禁用防火墙 </span><br><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-<p>方式二：开放端口</p>
-<ul>
-<li>查看开放的端口号</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>设置开放的端口号</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-service=http --permanent</span><br><span class="line">firewall-cmd --add-port=3306/tcp --permanent</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>重启防火墙</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-<h6 id="3-Linux下修改配置"><a href="#3-Linux下修改配置" class="headerlink" title="3. Linux下修改配置"></a><strong>3. Linux下修改配置</strong></h6><p>修改允许远程登陆的IP地址（根据需要的用户更改）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">select host,user from user; #查询用户信息</span><br><span class="line">update user set host = &#x27;%&#x27; where user =&#x27;用户名&#x27;;</span><br><span class="line">flush privileges; #刷新权限</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><code>%</code>是个 通配符 ，如果Host&#x3D;192.168.1.%，那么就表示只要是IP地址前缀为“192.168.1.”的客户端都可以连接。如果<code>Host=%</code>，表示所有IP都有连接权限。</p>
-<p>注意：在生产环境下不能为了省事将host设置为%，这样做会存在安全问题，具体的设置可以根据生产环境的IP进行设置。</p>
-</blockquote>
-<p>配置新连接报错：错误号码 2058，分析是 mysql 密码加密方法变了。</p>
-<ul>
-<li><p>解决方法一：升级远程连接工具版本</p>
-</li>
-<li><p>解决方法二：</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;abc123&#x27;;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<hr>
-<h3 id="拓展二：Linux下字符集的相关操作"><a href="#拓展二：Linux下字符集的相关操作" class="headerlink" title="拓展二：Linux下字符集的相关操作"></a><strong>拓展二：Linux下字符集的相关操作</strong></h3><p>mysql 5.7 默认服务器字符集：latin1 </p>
-<p>mysql 8.0 默认服务器字符集：utf8mb4</p>
-<h6 id="1-查看各级别的字符集"><a href="#1-查看各级别的字符集" class="headerlink" title="1. 查看各级别的字符集"></a><strong>1.</strong> <strong>查看各级别的字符集</strong></h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like &#x27;character%&#x27;;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>character_set_server：服务器级别的字符集</li>
-<li>character_set_database：当前数据库的字符集</li>
-<li>character_set_client：服务器解码请求时使用的字符集</li>
-<li>character_set_connection：服务器处理请求时会把请求字符串从character_set_client转为character_set_connection </li>
-<li>character_set_results：服务器向客户端返回数据时使用的字符集</li>
-</ul>
-<p><strong>小结</strong></p>
-<ul>
-<li>如果<code>创建数据库时</code>没有显式的指定字符集和比较规则，则该数据库<code>默认用服务器的</code>字符集和比较规则</li>
-<li>如果<code>创建表时</code>没有显式的指定字符集和比较规则，则该表<code>默认用数据库的</code>字符集和比较规则</li>
-<li>如果<code>创建或修改列</code>时没有显式的指定字符集和比较规则，则该列<code>默认用表的</code>字符集和比较规则</li>
-</ul>
-<h6 id="2-修改字符集"><a href="#2-修改字符集" class="headerlink" title="2. 修改字符集"></a><strong>2.</strong> <strong>修改字符集</strong></h6><p>修改mysql配置文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/my.cnf</span><br></pre></td></tr></table></figure>
-
-<p>在MySQL5.7或之前的版本中，在文件最后加上中文字符集配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">character_set_server=utf8</span><br></pre></td></tr></table></figure>
-
-<p>重新启动MySQL服务</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="拓展三：Linux下mysql-8-密码安全策略等级修改"><a href="#拓展三：Linux下mysql-8-密码安全策略等级修改" class="headerlink" title="拓展三：Linux下mysql 8 密码安全策略等级修改"></a><strong>拓展三：Linux下mysql 8 密码安全策略等级修改</strong></h3><h6 id="1-查看密码安全策略"><a href="#1-查看密码安全策略" class="headerlink" title="1. 查看密码安全策略"></a><strong>1.</strong> <strong>查看密码安全策略</strong></h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like &#x27;validate_password%&#x27;;</span><br></pre></td></tr></table></figure>
-
-<h6 id="2-修改安全策略等级"><a href="#2-修改安全策略等级" class="headerlink" title="2. 修改安全策略等级"></a><strong>2.</strong> <strong>修改安全策略等级</strong></h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#强度低</span><br><span class="line">SET GLOBAL validate_password_policy=LOW; 或</span><br><span class="line">SET GLOBAL validate_password_policy=0; </span><br><span class="line">#强度中</span><br><span class="line">SET GLOBAL validate_password_policy=MEDIUM; 或</span><br><span class="line">SET GLOBAL validate_password_policy=1; </span><br><span class="line">#强度高 </span><br><span class="line">SET GLOBAL validate_password_policy=STRONG; </span><br><span class="line">SET GLOBAL validate_password_policy=2; </span><br></pre></td></tr></table></figure>
-
-<p>还可修改密码限制字符长度</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set global validate_password_length=1</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="拓展四：-文件目录"><a href="#拓展四：-文件目录" class="headerlink" title="拓展四： 文件目录"></a><strong>拓展四： 文件目录</strong></h3><p>查看数据库文件的存放路径：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like &#x27;datadir&#x27;; # /var/lib/mysql/</span><br></pre></td></tr></table></figure>
-
-<p>配置文件存放目录：</p>
-<ul>
-<li>命令及配置文件目录：&#x2F;usr&#x2F;share&#x2F;mysql-8.0</li>
-<li>mysql配置文件目录：&#x2F;etc&#x2F;mysql&#x2F;my.cnf （Linux下为.cnf,Windows下为.ini）</li>
-</ul>
-<p>系统表空间（system tablespace）：</p>
-<p>默认情况下，InnoDB会在数据目录下创建一个名为<code>ibdata1</code>、大小为<code>12M</code>的<code>自拓展</code>文件，这个文件就是对应的<code>系统表空间</code>在文件系统上的表示。</p>
-<p>独立表空间(file-per-table tablespace)：</p>
-<p>在MySQL5.6.6以及之后的版本中，InnoDB并不会默认的把各个表的数据存储到系统表空间中，而是为<code>每一个表建立一个独立表空间</code>，也就是说我们创建了多少个表，就有多少个独立表空间。使用独立表空间来存储表数据的话，<code>会在该表所属数据库对应的子目录下创建一个表示该独立表空间的文件，文件名和表名相同</code>。</p>
-
-    
-
-    
-
-    
-    <div class="declare"> 
-      <ul class="post-copyright">
-        <li>
-          <strong>本文作者：</strong>
-          zzr
-        </li>
-        <li>
-          <strong>本文链接：</strong>
-          <a href="http://zzruei.github.io/2023/01/15/mysql拓展/" title="mysql拓展" target="_blank">http://zzruei.github.io/2023/01/15/mysql拓展/</a>
-        </li>
-        <li>
-          <strong>版权声明： </strong>
-          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
-        </li>
-      </ul>
-    </div>
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">远程连接</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符集</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">文件目录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">密码安全策略</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">适配器模式</a>
         		</li>
       		
 		</ul>
 	</div>
 
-    
+          
 
-    
-
-    
-    
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a> -->
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zzruei.github.io/2023/01/15/mysql%E6%8B%93%E5%B1%95/" alt="微信分享二维码"> -->
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-    
-    <div class="clearfix"></div>
-  </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-<nav id="article-nav">
-  
-    <a href="/2023/01/15/mysql%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8EInnoDB%E5%92%8CMyISAM/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          mysql存储引擎
-        
-      </div>
-    </a>
   
   
-    <a href="/2023/01/12/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E5%8D%95%E9%93%BE%E8%A1%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构--单链表</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
           </div>
@@ -547,9 +289,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,

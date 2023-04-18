@@ -18,7 +18,7 @@
 <meta property="og:description" content="SpringDataRedis:Spring提供操作Redis的集成模块  提供了对不同Redis客户端的整合（Lettuce和Jedis） 提供了RedisTemplate统一API来操作Redis 支持Redis的发布订阅模型 支持Redis哨兵和Redis集群 支持基于Lettuce的响应式编程 支持基于JDK、JSON、字符串、Spring对象的数据序列化及反序列化 支持基于Redis的J">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-12T13:16:00.798Z">
-<meta property="article:modified_time" content="2023-04-12T14:24:26.959Z">
+<meta property="article:modified_time" content="2023-04-18T07:34:10.348Z">
 <meta property="article:author" content="zzr">
 <meta property="article:tag" content="Redis">
 <meta property="article:tag" content="SpringDataRedis">
@@ -223,7 +223,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">606字</span>
+      <span class="post-count">607字</span>
     </span>
   </span>
 
@@ -268,7 +268,7 @@
 
 <p>SpringDataRedis的序列化方式：</p>
 <p>方式一：自定义RedisTemplate</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RedisConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@ConditionalOnSingleCandidate</span></span><br><span class="line">    <span class="keyword">public</span> RedisTemplate &lt;String,Object&gt; redisTemplate(RedisConnectionFactory redisConnectionFactory)&#123;</span><br><span class="line">        <span class="comment">// 创建Template</span></span><br><span class="line">        RedisTemplate&lt;String, Object&gt; redisTemplate = <span class="keyword">new</span> <span class="title class_">RedisTemplate</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">// 设置连接工厂</span></span><br><span class="line">        redisTemplate.setConnectionFactory(redisConnectionFactory);</span><br><span class="line">        <span class="comment">// 设置序列化工具</span></span><br><span class="line">        <span class="type">GenericJackson2JsonRedisSerializer</span> <span class="variable">jsonRedisSerializer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">GenericJackson2JsonRedisSerializer</span>();</span><br><span class="line">        <span class="comment">// key和 hashKey采用 string序列化</span></span><br><span class="line">        redisTemplate.setKeySerializer(<span class="keyword">new</span> <span class="title class_">StringRedisSerializer</span>());</span><br><span class="line">        redisTemplate.setHashKeySerializer(<span class="keyword">new</span> <span class="title class_">StringRedisSerializer</span>());</span><br><span class="line">        <span class="comment">// value和 hashValue采用 JSON序列化</span></span><br><span class="line">        redisTemplate.setValueSerializer(jsonRedisSerializer);</span><br><span class="line">        redisTemplate.setHashValueSerializer(jsonRedisSerializer);</span><br><span class="line">        <span class="keyword">return</span> redisTemplate;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//为了在反序列化时知道对象的类型，JSON序列化器会将类的class类型写入json结果中，存入Redis，会带来额外的内存开销</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RedisConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> RedisConnectionFactory factory;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> RedisTemplate &lt;String,Object&gt; redisTemplate()&#123;</span><br><span class="line">        <span class="comment">// 创建Template</span></span><br><span class="line">        RedisTemplate&lt;String, Object&gt; redisTemplate = <span class="keyword">new</span> <span class="title class_">RedisTemplate</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">// 设置连接工厂</span></span><br><span class="line">        redisTemplate.setConnectionFactory(factory);</span><br><span class="line">        <span class="comment">// 设置序列化工具</span></span><br><span class="line">        <span class="type">GenericJackson2JsonRedisSerializer</span> <span class="variable">jsonRedisSerializer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">GenericJackson2JsonRedisSerializer</span>();</span><br><span class="line">        <span class="comment">// key和 hashKey采用 string序列化</span></span><br><span class="line">        redisTemplate.setKeySerializer(<span class="keyword">new</span> <span class="title class_">StringRedisSerializer</span>());</span><br><span class="line">        redisTemplate.setHashKeySerializer(<span class="keyword">new</span> <span class="title class_">StringRedisSerializer</span>());</span><br><span class="line">        <span class="comment">// value和 hashValue采用 JSON序列化</span></span><br><span class="line">        redisTemplate.setValueSerializer(jsonRedisSerializer);</span><br><span class="line">        redisTemplate.setHashValueSerializer(jsonRedisSerializer);</span><br><span class="line">        <span class="keyword">return</span> redisTemplate;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//为了在反序列化时知道对象的类型，JSON序列化器会将类的class类型写入json结果中，存入Redis，会带来额外的内存开销</span></span><br></pre></td></tr></table></figure>
 
 <p>方式二：使用StringRedisTemplate，它的key和value的序列化方式默认就是String方式</p>
 <ol>
@@ -385,6 +385,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E8%AE%BE%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          设计模式--适配器模式
+        
+      </div>
+    </a>
   
   
     <a href="/2023/04/11/Mybatis-plus%E8%87%AA%E5%8A%A8%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
@@ -674,6 +683,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringDataRedis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">桥接模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">组合模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">适配器模式</a>
               </li>
             
             <div class="clearfix"></div>

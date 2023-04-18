@@ -192,6 +192,317 @@
             
 
   
+    <article id="post-设计模式--组合模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" target="_blank">设计模式--组合模式</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <time datetime="2023-04-18T09:21:47.889Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-18</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>组合模式：是一种结构型设计模式，组合多个对象形成树形结构以表示“部分-整体”的结构层次。组合模式对单个对象（即叶子对象）和组合对象（即容器对象）的使用具有一致性</p>
+<p>组合模式优点：</p>
+<ol>
+<li>可以清楚地定义分层次的复杂对象，表示对象的全部或部分层次，让客户端忽略了层次的差异，方便对整个层次结构进行控制</li>
+<li>客户端可以一致地使用一个组合结构或其中单个对象，不必关心处理的是单个对象还是整个组合结构，简化了客户端代码</li>
+<li>增加新的容器构件和叶子构件都很方便，符合开闭原则</li>
+<li>为树形结构的面向对象实现提供了一种灵活的解决方案</li>
+</ol>
+<p>组合模式缺点：在增加新构件时很难对容器中的构件类型进行限制</p>
+    
+    <a class="article-more-a" href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">组合模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-设计模式--桥接模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" target="_blank">设计模式--桥接模式</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <time datetime="2023-04-18T09:07:28.312Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-18</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>桥接模式：是一种结构型设计模式，它将抽象部分和实现部分分离，使它们可以独立变化。桥接模式通过组合的方式，将一个对象的实现和它的抽象分离开来，从而使它们可以独立地变化。</p>
+<p>在桥接模式中，抽象部分和实现部分都可以有多个变化的维度，它们通过一个桥接接口来连接。抽象部分和实现部分之间的桥接接口可以使用抽象类或接口来定义。</p>
+<p>桥接模式的优点：</p>
+<ul>
+<li>分离抽象部分和实现部分，使它们可以独立变化，提高了系统的灵活性和扩展性。</li>
+<li>桥接模式可以减少子类的个数，因为所有的实现部分都可以通过桥接接口来连接。</li>
+<li>桥接模式可以使系统更加稳定，因为抽象部分和实现部分都可以独立地进行变化，不会相互影响。</li>
+</ul>
+<p>桥接模式的缺点：</p>
+<ul>
+<li>桥接模式增加了系统的复杂度，因为需要定义抽象部分和实现部分之间的桥接接口。</li>
+<li>桥接模式需要额外的代码，因为需要定义抽象部分和实现部分的类和接口。</li>
+</ul>
+    
+    <a class="article-more-a" href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">桥接模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-设计模式--设配器模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E8%AE%BE%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" target="_blank">设计模式--适配器模式</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E8%AE%BE%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <time datetime="2023-04-18T08:36:25.487Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-18</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>适配器模式：是一种结构型设计模式，它允许将不兼容的接口转换为客户端所期望的接口</p>
+<p>适配器模式优点：</p>
+<ol>
+<li>将目标类和适配者类解耦，通过引入一个适配器类来重用现有的适配者类，无须修改原有结构</li>
+<li>增加了类的透明性和复用性，提高了适配者的复用性，同一个适配者类可以在多个不同的系统中复用</li>
+<li>灵活性和扩展性非常好</li>
+<li>类适配器模式：置换一些适配者的方法很方便</li>
+<li>对象适配器模式：可以把多个不同的适配者适配到同一个目标，还可以适配一个适配者的子类</li>
+</ol>
+<p>适配器模式缺点：<br>类适配器模式：</p>
+<ol>
+<li>一次最多只能适配一个适配者类，不能同时适配多个适配者</li>
+<li>适配者类不能为最终类</li>
+<li>目标抽象类只能为接口，不能为类</li>
+</ol>
+<p>对象适配器模式：在适配器中置换适配者类的某些方法比较麻烦</p>
+    
+    <a class="article-more-a" href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E8%AE%BE%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">适配器模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E8%AE%BE%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Redis-SpringDataRedis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -815,7 +1126,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2023/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%B9%B6%E6%9F%A5%E9%9B%86/" target="_blank">并查集</a>
+	  <a class="article-title" href="/2023/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%B9%B6%E6%9F%A5%E9%9B%86/" target="_blank">数据结构--并查集</a>
   
     </h1>
   
@@ -874,337 +1185,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2023/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%B9%B6%E6%9F%A5%E9%9B%86/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-工厂方法模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/03/21/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" target="_blank">设计模式--工厂方法模式</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/03/21/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-        <time datetime="2023-03-21T12:52:29.296Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>工厂方法模式：是一种创建型设计模式，它定义了一个用于创建对象的接口，但是让子类决定实例化哪个类。工厂方法模式将对象的创建延迟到子类中进行，从而实现了解耦。（可以有多个工厂类，一个工厂生产一种产品，适用于创建多种产品的情况）</p>
-<p>工厂方法模式的优点是：</p>
-<ol>
-<li><p>可以通过工厂方法来控制对象的创建，实现了解耦。</p>
-</li>
-<li><p>可以通过添加新的具体工厂类来扩展系统，符合开闭原则。</p>
-</li>
-<li><p>可以通过抽象工厂类来定义一组相关的产品对象，使得系统更加灵活。</p>
-</li>
-</ol>
-<p>工厂方法模式的缺点是：</p>
-<ol>
-<li><p>需要定义抽象工厂类和具体工厂类，增加了系统的复杂度。</p>
-</li>
-<li><p>每个具体工厂类只能创建一种具体产品，无法创建复杂对象。</p>
-</li>
-</ol>
-    
-    <a class="article-more-a" href="/2023/03/21/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">工厂方法模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/03/21/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式-简单工厂模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/03/21/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" target="_blank">设计模式--简单工厂模式</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/03/21/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-        <time datetime="2023-03-21T12:16:54.877Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>简单工厂模式：是一种创建型设计模式，它提供了一种创建对象的简单方法，而不需要直接实例化对象。简单工厂模式通过一个工厂类来创建对象，而不是通过直接调用构造函数来创建对象。（通过调用工厂的方法传入参数获取需要的实例）（只有一个工厂类，该工厂可以生产多种产品，适用于单一产品的创建）</p>
-<p>简单工厂模式的优点是：</p>
-<ol>
-<li><p>简化了对象的创建过程，客户端只需要传入参数，就可以获得所需的对象。</p>
-</li>
-<li><p>隐藏了对象的创建细节，客户端不需要知道具体的实现细节。</p>
-</li>
-<li><p>可以通过工厂类来控制对象的创建，实现了解耦。</p>
-</li>
-</ol>
-<p>简单工厂模式的缺点是：</p>
-<ol>
-<li><p>工厂类负责创建所有的对象，如果需要添加新的产品，就需要修改工厂类的代码，违反了开闭原则。</p>
-</li>
-<li><p>工厂类的职责过重，一旦工厂类出现问题，整个系统就会受到影响。</p>
-</li>
-<li><p>简单工厂模式只能创建固定类型的对象，无法创建复杂对象。</p>
-</li>
-</ol>
-    
-    <a class="article-more-a" href="/2023/03/21/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">简单工厂模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/03/21/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据库设计（E-R图）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%EF%BC%88E-R%E5%9B%BE%EF%BC%89/" target="_blank">数据库设计（E-R图）</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%EF%BC%88E-R%E5%9B%BE%EF%BC%89/" class="archive-article-date">
-        <time datetime="2023-03-18T13:46:05.679Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-18</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>数据库设计：</p>
-<p>①画E-R图</p>
-<p>②E-R图确定关系模型（表）</p>
-<p>E-R图：实体-联系图</p>
-<p>E-R图3个要素：实体，属性，联系</p>
-<ul>
-<li>实体：用矩形表示</li>
-<li>属性：用椭圆形表示</li>
-<li>联系：用菱形表示</li>
-<li>用实线连接实体、属性、联系，并标明关联关系</li>
-</ul>
-<p>实体与实体之间关联关系：</p>
-<ul>
-<li>1对1</li>
-<li>1对多（1对n）</li>
-<li>多对多（n对m）</li>
-</ul>
-<p>关系模型（表）：学生（学号，姓名，性别,出生日期）</p>
-    
-    <a class="article-more-a" href="/2023/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%EF%BC%88E-R%E5%9B%BE%EF%BC%89/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">数据库设计</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">E-R图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">关系模型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%EF%BC%88E-R%E5%9B%BE%EF%BC%89/">展开全文 >></a>
     </p>
     
 
@@ -1491,6 +1471,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringDataRedis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">桥接模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">组合模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">适配器模式</a>
               </li>
             
             <div class="clearfix"></div>
