@@ -18,7 +18,7 @@
 <meta property="og:description" content="线程私有：  程序计数器（PC Register）:保存下一条指令执行地址，不存在内存溢出问题，线程私有（cpu切片运行，需保证切回原线程继续运行后续代码）。 虚拟机栈（JVM Stacks）：线程运行时需要的内存空间，由多个栈帧组成，每调用一个方法对应一个栈帧（方法运行时所需要的内存）。虚拟机栈存放局部变量表、操作数栈、动态链接、方法出口等信息，存在内存溢出风险，线程私有（每个线程都有自己独立">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-09-04T12:24:11.044Z">
-<meta property="article:modified_time" content="2023-09-04T13:03:58.205Z">
+<meta property="article:modified_time" content="2023-09-15T12:57:31.909Z">
 <meta property="article:author" content="zzr">
 <meta property="article:tag" content="java虚拟机">
 <meta property="article:tag" content="jvm">
@@ -223,7 +223,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">270字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -232,7 +232,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -252,7 +252,41 @@
 <li>栈帧过多可能导致内存溢出（递归），栈帧过大也可能导致栈溢出。</li>
 </ul>
 </li>
+<li>本地方法栈（Native Method Stacks）：本地方法运行时所需的内存，线程私有。</li>
 </ol>
+<span id="more"></span>
+
+<p>线程共享：</p>
+<ol>
+<li>堆（Heap）：存放对象实例，垃圾回收的主要区域，存在内存溢出风险，线程共享。通过-Xms（初始大小）和-Xmx（最大大小）参数设置堆内存大小，默认256M。</li>
+<li>方法区（Method Area）：存放已被加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。<ul>
+<li>实现：jdk7及以前，永久代（PermGen），jdk8后，元空间（Metaspace），元空间存放在本地内存中。</li>
+<li>大小设置：jdk7及以前，-XX:PermSize（初始大小）和-XX:MaxPermSize（最大大小）参数设置，jdk8后，-XX:MetaspaceSize和-XX:MaxMetaspaceSize参数设置。</li>
+<li>运行时常量池：方法区的一部分，存放编译期生成的各种字面量和符号引用。</li>
+</ul>
+</li>
+<li>StringTable（字符串表）：jdk7及以前，在方法区运行时常量池里，jdk8后，在堆里。底层采用HashTable（哈希表）做存储。<ul>
+<li>通过字面量创建字符串时，会先在StringTable中查找，如果存在则直接返回引用，如果不存在则会在StringTable中添加，然后返回引用。如String s &#x3D; “abc”; 如果StringTable中已存在”abc”,则s引用的是StringTable中的”abc”的引用。如果不存在则将”abc”添加到StringTable中，然后返回引用。String s&#x3D;”a”+”b”也一样。</li>
+<li>通过new创建字符串时，不会在StringTable中查找，而是直接在堆中创建对象实例，然后返回引用。如String s &#x3D; new String(“abc”); 每次调用都会在堆中创建对象实例，同时将字面量”abc”放入StringTable,s引用的是堆中对象。<ul>
+<li>jdk7后，调用s.intern()，如果StringTable中存在”abc”，直接返回StringTable中的引用，如果不存在就将”abc”放入StringTable并返回StringTable中的引用;jdk6前如果没有会把此对象复制一份，放入StringTable，原对象不变，有直接返回引用。</li>
+</ul>
+</li>
+<li>字符串变量拼接使用的是StringBudiler，在堆中创建StringBudiler对象，调用StringBudiler.append()方法，然后将拼接结果通过toString()方法返回字符串对象。如String s&#x3D;s1+s2;</li>
+<li>StringTable中元素无重复，当存储大量有重复的字符串对象时，可考虑放入StringTable中，大大节省内存空间。把字符串加入StringTable，每次都会先检查是否存在该字符串，可以调整增加StringTable中的数组（桶），减少Hash冲突，提高在StringTable中的查询效率。通过-XX:StringTableSize &#x3D; 大小进行调整，默认是60013，最小是1009。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>直接内存：不属于JVM的内存结构，它是物理机的内存，但是JVM虚拟机可以调用该部分内存。直接内存是系统内存和java堆内存可以共享的，当进行磁盘读操作时，就可以不用从文件-&gt;物理内存-&gt;java内存，而是文件-&gt;直接内存，写操作也一样，大大节约了时间开销。</p>
+<ul>
+<li>直接内存的使用：<ul>
+<li>常见于NIO，用于数据缓冲区</li>
+<li>分配回收的代价较高，但是速度很快</li>
+<li>不受JVM内存回收管理</li>
+</ul>
+</li>
+</ul>
+<p>通过java中的unsafe.allocateMemory()分配直接内存,通过创建Cleaner对象释放内存，Cleaner的对象是一个虚引用对象，间接调用unsafe.freeMemory()进行释放内存。</p>
 <hr>
 
     
