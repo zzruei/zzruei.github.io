@@ -192,7 +192,7 @@
             
 
   
-    <article id="post-数据结构-双链表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-设计模式--设配器模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -200,7 +200,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2023/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8F%8C%E9%93%BE%E8%A1%A8/" target="_blank">数据结构--双链表</a>
+	  <a class="article-title" href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E8%AE%BE%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" target="_blank">设计模式--适配器模式</a>
   
     </h1>
   
@@ -208,8 +208,8 @@
 
   
   
-<a href="/2023/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8F%8C%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-        <time datetime="2023-02-02T08:43:31.924Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-02</time>
+<a href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E8%AE%BE%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <time datetime="2023-04-18T08:36:25.487Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-18</time>
 </a>
 
   
@@ -221,9 +221,24 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>双链表特点：结点双向指引，即在当前结点情况下，可以知道上一结点，也可知道下一结点</p>
+    <p>适配器模式：是一种结构型设计模式，它允许将不兼容的接口转换为客户端所期望的接口</p>
+<p>适配器模式优点：</p>
+<ol>
+<li>将目标类和适配者类解耦，通过引入一个适配器类来重用现有的适配者类，无须修改原有结构</li>
+<li>增加了类的透明性和复用性，提高了适配者的复用性，同一个适配者类可以在多个不同的系统中复用</li>
+<li>灵活性和扩展性非常好</li>
+<li>类适配器模式：置换一些适配者的方法很方便</li>
+<li>对象适配器模式：可以把多个不同的适配者适配到同一个目标，还可以适配一个适配者的子类</li>
+</ol>
+<p>适配器模式缺点：<br>类适配器模式：</p>
+<ol>
+<li>一次最多只能适配一个适配者类，不能同时适配多个适配者</li>
+<li>适配者类不能为最终类</li>
+<li>目标抽象类只能为接口，不能为类</li>
+</ol>
+<p>对象适配器模式：在适配器中置换适配者类的某些方法比较麻烦</p>
     
-    <a class="article-more-a" href="/2023/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8F%8C%E9%93%BE%E8%A1%A8/#more">more >></a>
+    <a class="article-more-a" href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E8%AE%BE%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/#more">more >></a>
     
     
 
@@ -240,19 +255,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线性表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">双链表</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">适配器模式</a>
         		</li>
       		
 		</ul>
@@ -262,7 +269,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2023/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8F%8C%E9%93%BE%E8%A1%A8/">展开全文 >></a>
+      <a class="article-more-a" href="/2023/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E8%AE%BE%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
     </p>
     
 
@@ -292,7 +299,7 @@
 
 
   
-    <article id="post-数据结构-循环链表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Redis-SpringDataRedis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -300,7 +307,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2023/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/" target="_blank">数据结构--循环链表</a>
+	  <a class="article-title" href="/2023/04/12/Redis-SpringDataRedis/" target="_blank">Redis--SpringDataRedis</a>
   
     </h1>
   
@@ -308,8 +315,8 @@
 
   
   
-<a href="/2023/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-        <time datetime="2023-02-02T12:55:27.255Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-02</time>
+<a href="/2023/04/12/Redis-SpringDataRedis/" class="archive-article-date">
+        <time datetime="2023-04-12T13:16:00.798Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-12</time>
 </a>
 
   
@@ -321,15 +328,20 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>循环链表特点：尾结点和头节点连接，构成环</p>
-<ul>
-<li><p>单向循环环链表特点：尾结点指向头节点，构成环</p>
-</li>
-<li><p>双向循环环链表特点：每个结点双向连接，尾结点和头节点双向连接，构成环</p>
-</li>
-</ul>
+    <p>SpringDataRedis:Spring提供操作Redis的集成模块</p>
+<ol>
+<li>提供了对不同Redis客户端的整合（Lettuce和Jedis）</li>
+<li>提供了RedisTemplate统一API来操作Redis</li>
+<li>支持Redis的发布订阅模型</li>
+<li>支持Redis哨兵和Redis集群</li>
+<li>支持基于Lettuce的响应式编程</li>
+<li>支持基于JDK、JSON、字符串、Spring对象的数据序列化及反序列化</li>
+<li>支持基于Redis的JDKCollection实现</li>
+</ol>
+<p>所需依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--Redis依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--连接池依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-pool2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
     
-    <a class="article-more-a" href="/2023/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/#more">more >></a>
+    <a class="article-more-a" href="/2023/04/12/Redis-SpringDataRedis/#more">more >></a>
     
     
 
@@ -346,19 +358,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线性表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">循环链表</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringDataRedis</a>
         		</li>
       		
 		</ul>
@@ -368,7 +372,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2023/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/">展开全文 >></a>
+      <a class="article-more-a" href="/2023/04/12/Redis-SpringDataRedis/">展开全文 >></a>
     </p>
     
 
@@ -398,7 +402,7 @@
 
 
   
-    <article id="post-数据结构-栈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Mybatis-plus自动代码生成器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -406,7 +410,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2023/02/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88/" target="_blank">数据结构--栈</a>
+	  <a class="article-title" href="/2023/04/11/Mybatis-plus%E8%87%AA%E5%8A%A8%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/" target="_blank">Mybatis-plus自动代码生成器</a>
   
     </h1>
   
@@ -414,8 +418,8 @@
 
   
   
-<a href="/2023/02/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88/" class="archive-article-date">
-        <time datetime="2023-02-04T08:06:56.928Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-04</time>
+<a href="/2023/04/11/Mybatis-plus%E8%87%AA%E5%8A%A8%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/" class="archive-article-date">
+        <time datetime="2023-04-11T13:43:53.814Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-11</time>
 </a>
 
   
@@ -427,19 +431,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>栈：</p>
-<ul>
-<li>定义：只能在同一端进行插入或删除操作的线性表（受限的线性表）</li>
-<li>特点：后进先出（每次进栈的元素都作为新栈顶元素，每次出栈的元素只能是当前栈顶元素）</li>
-<li>栈的实现：<ul>
-<li>数组</li>
-<li>链表</li>
-</ul>
-</li>
-<li>数组实现的栈创建时容量固定，在不考虑后期扩容的情况下，容易栈溢出，链栈在内存足够的情况下，通常不会栈溢出</li>
-</ul>
+    <p>所需依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-generator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.freemarker<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>freemarker<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
     
-    <a class="article-more-a" href="/2023/02/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88/#more">more >></a>
+    <a class="article-more-a" href="/2023/04/11/Mybatis-plus%E8%87%AA%E5%8A%A8%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/#more">more >></a>
     
     
 
@@ -456,11 +451,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Mybatis-plus</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">自动代码生成</a>
         		</li>
       		
 		</ul>
@@ -470,7 +465,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2023/02/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88/">展开全文 >></a>
+      <a class="article-more-a" href="/2023/04/11/Mybatis-plus%E8%87%AA%E5%8A%A8%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/">展开全文 >></a>
     </p>
     
 
@@ -500,7 +495,7 @@
 
 
   
-    <article id="post-数据结构-队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-设计模式--原型模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -508,7 +503,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2023/02/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%98%9F%E5%88%97/" target="_blank">数据结构--队列</a>
+	  <a class="article-title" href="/2023/04/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" target="_blank">设计模式--原型模式</a>
   
     </h1>
   
@@ -516,8 +511,8 @@
 
   
   
-<a href="/2023/02/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%98%9F%E5%88%97/" class="archive-article-date">
-        <time datetime="2023-02-06T08:20:33.562Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-06</time>
+<a href="/2023/04/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <time datetime="2023-04-09T14:35:36.345Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-09</time>
 </a>
 
   
@@ -529,19 +524,20 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>队列：</p>
-<ul>
-<li>定义：只能在不同端进行插入或删除操作的线性表（受限的线性表）</li>
-<li>特点：先进先出（每次进队的元素作为新队尾元素，每次出队的元素只能是队头的元素）</li>
-<li>队列的实现：<ul>
-<li>数组</li>
-<li>链表</li>
-</ul>
-</li>
-<li>普通数组队列创建后空间固定，后期扩容效率低，改成循环队列后，可以重复利用出队后滞留的空间。</li>
-</ul>
+    <p>原型模式：是一种创建型设计模式，它允许通过复制现有对象来创建新对象，而无需知道创建新对象的细节。原型模式的核心思想是将一个原型对象作为模板，通过复制来创建新的对象。原型模式常常用于需要创建大量相似对象的场景，可以大大提高程序的性能和效率。在原型模式中，原型对象通常是通过浅拷贝或深拷贝来复制的。浅拷贝只复制对象的基本属性，而不复制对象的引用类型属性，因此新对象和原对象会共享一些属性值。深拷贝则会完全复制对象及其所有引用类型属性，因此新对象和原对象完全独立。</p>
+<p>原型模式优点：</p>
+<ol>
+<li>简化对象的创建过程，通过复制一个已有实例可以提高新实例的创建效率，扩展性较好</li>
+<li>简化创建结构，原型模式中产品的复制是通过封装在原型类中的克隆方法实现的，无须专门的工厂类来创建产品</li>
+<li>可以使用深克隆的方式保存对象的状态，以便在需要的时候使用，可辅助实现撤销操作</li>
+</ol>
+<p>原型模式缺点：</p>
+<ol>
+<li>需要为每一个类配备一个克隆方法，而且该克隆方法位于一个类的内部，当对已有的类进行改造时，需要修改源代码，违背了开闭原则</li>
+<li>在实现深克隆时需要编写较为复杂的代码，而且当对象之间存在多重的嵌套引用时，为了实现深克隆，每一层对象对应的类都必须支持深克隆，实现起来可能会比较麻烦</li>
+</ol>
     
-    <a class="article-more-a" href="/2023/02/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%98%9F%E5%88%97/#more">more >></a>
+    <a class="article-more-a" href="/2023/04/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/#more">more >></a>
     
     
 
@@ -558,11 +554,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">队列</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">原型模式</a>
         		</li>
       		
 		</ul>
@@ -572,7 +568,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2023/02/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%98%9F%E5%88%97/">展开全文 >></a>
+      <a class="article-more-a" href="/2023/04/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
     </p>
     
 
@@ -602,7 +598,7 @@
 
 
   
-    <article id="post-数据结构-二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-设计模式--单例模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -610,7 +606,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2023/02/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/" target="_blank">数据结构--二叉树</a>
+	  <a class="article-title" href="/2023/04/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" target="_blank">设计模式--单例模式</a>
   
     </h1>
   
@@ -618,8 +614,8 @@
 
   
   
-<a href="/2023/02/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/" class="archive-article-date">
-        <time datetime="2023-02-08T08:44:59.553Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-08</time>
+<a href="/2023/04/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <time datetime="2023-04-09T13:38:54.807Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-09</time>
 </a>
 
   
@@ -631,18 +627,27 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>树：（一对多关系，非线性结构）</p>
-<p><img src="data:image/jpeg;base64,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" alt="avatar"></p>
-<ul>
-<li><p>结点的度：一个节点含有的子树的个数称为该节点的度；如上图：A的度为6，即B、C、D、E、F、G。</p>
-</li>
-<li><p>叶子结点：度为0的节点称为叶子结点；如上图：B、C、H、K、L、M、N、P、Q为叶子结点。</p>
-</li>
-<li><p>双亲结点或父结点：若一个节点含有子结点，则这个结点称为其子结点的父结点；如上图：A是B、C、D、E、F、G的父结点。</p>
-</li>
-</ul>
+    <p>单例模式：是一种创建型设计模式，它保证一个类仅有一个实例，并提供一个全局访问点</p>
+<p>优点：</p>
+<ol>
+<li>提供了对唯一实例的受控访问</li>
+<li>可以节约系统资源，提高系统的性能</li>
+<li>允许可变数目的实例（多例类）</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>扩展困难（缺少抽象层）</li>
+<li>单例类的职责过重</li>
+<li>由于自动垃圾回收机制，可能会导致共享的单例对象的状态丢失</li>
+</ol>
+<p>适用场景：</p>
+<ol>
+<li>系统只需要一个实例对象，或者因为资源消耗太大而只允许创建一个对象</li>
+<li>客户调用类的单个实例只允许使用一个公共访问点，除了该公共访问点，不能通过其他途径访问该实例</li>
+</ol>
+<p>单例模式角色：Singleton：单例</p>
     
-    <a class="article-more-a" href="/2023/02/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/#more">more >></a>
+    <a class="article-more-a" href="/2023/04/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/#more">more >></a>
     
     
 
@@ -659,15 +664,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">树</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">单例模式</a>
         		</li>
       		
 		</ul>
@@ -677,7 +678,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2023/02/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/">展开全文 >></a>
+      <a class="article-more-a" href="/2023/04/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F--%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
     </p>
     
 
