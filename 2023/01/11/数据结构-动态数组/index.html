@@ -6,24 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zzruei.github.io">
-  <title>数据结构--循环链表 | zzruei小基地</title>
+  <title>数据结构--动态数组 | zzruei小基地</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="循环链表特点：尾结点和头节点连接，构成环  单向循环环链表特点：尾结点指向头节点，构成环  双向循环环链表特点：每个结点双向连接，尾结点和头节点双向连接，构成环">
+  <meta name="description" content="数据结构分类：- 按逻辑结构分    - 线性结构      - 数组      - 链表      - 栈      - 队列      - 串    - 非线性结构      - 树      - 图或网      - 集合- 按存储结构(物理结构)分    - 顺序存储    - 链式存储    - 索引存储    - 散列存储（hash存储）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构--循环链表">
-<meta property="og:url" content="http://zzruei.github.io/2023/02/02/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/index.html">
+<meta property="og:title" content="数据结构--动态数组">
+<meta property="og:url" content="http://zzruei.github.io/2023/01/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/index.html">
 <meta property="og:site_name" content="zzruei小基地">
-<meta property="og:description" content="循环链表特点：尾结点和头节点连接，构成环  单向循环环链表特点：尾结点指向头节点，构成环  双向循环环链表特点：每个结点双向连接，尾结点和头节点双向连接，构成环">
+<meta property="og:description" content="数据结构分类：- 按逻辑结构分    - 线性结构      - 数组      - 链表      - 栈      - 队列      - 串    - 非线性结构      - 树      - 图或网      - 集合- 按存储结构(物理结构)分    - 顺序存储    - 链式存储    - 索引存储    - 散列存储（hash存储）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-02T12:55:27.255Z">
-<meta property="article:modified_time" content="2023-04-18T10:54:45.857Z">
+<meta property="article:published_time" content="2023-01-11T06:41:35.431Z">
+<meta property="article:modified_time" content="2023-09-22T12:00:54.900Z">
 <meta property="article:author" content="zzr">
 <meta property="article:tag" content="数据结构">
-<meta property="article:tag" content="线性表">
-<meta property="article:tag" content="链表">
-<meta property="article:tag" content="循环链表">
+<meta property="article:tag" content="动态数组">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="zzruei小基地" type="application/atom+xml">
@@ -192,14 +190,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-线性表-循环链表" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据结构-动态数组" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      数据结构--循环链表
+      数据结构--动态数组
     </h1>
   
 
@@ -211,8 +209,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2023/02/02/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-        <time datetime="2023-02-02T12:55:27.255Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-02</time>
+<a href="/2023/01/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/" class="archive-article-date">
+        <time datetime="2023-01-11T06:41:35.431Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-11</time>
 </a>
 
   
@@ -225,7 +223,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.3k字</span>
+      <span class="post-count">1.2k字</span>
     </span>
   </span>
 
@@ -234,7 +232,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">9分</span>
+      <span class="post-count">5分</span>
     </span>
   </span>
 </div>
@@ -245,80 +243,68 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>循环链表特点：尾结点和头节点连接，构成环</p>
-<ul>
-<li><p>单向循环环链表特点：尾结点指向头节点，构成环</p>
-</li>
-<li><p>双向循环环链表特点：每个结点双向连接，尾结点和头节点双向连接，构成环</p>
-</li>
-</ul>
-<span id="more"></span>
+    <h2 id="数据结构分类：-按逻辑结构分-线性结构-数组-链表-栈-队列-串-非线性结构-树-图或网-集合-按存储结构-物理结构-分-顺序存储-链式存储-索引存储-散列存储（hash存储）"><a href="#数据结构分类：-按逻辑结构分-线性结构-数组-链表-栈-队列-串-非线性结构-树-图或网-集合-按存储结构-物理结构-分-顺序存储-链式存储-索引存储-散列存储（hash存储）" class="headerlink" title="数据结构分类：- 按逻辑结构分    - 线性结构      - 数组      - 链表      - 栈      - 队列      - 串    - 非线性结构      - 树      - 图或网      - 集合- 按存储结构(物理结构)分    - 顺序存储    - 链式存储    - 索引存储    - 散列存储（hash存储）"></a>数据结构分类：<br>- 按逻辑结构分<br>    - 线性结构<br>      - 数组<br>      - 链表<br>      - 栈<br>      - 队列<br>      - 串<br>    - 非线性结构<br>      - 树<br>      - 图或网<br>      - 集合<br>- 按存储结构(物理结构)分<br>    - 顺序存储<br>    - 链式存储<br>    - 索引存储<br>    - 散列存储（hash存储）</h2><span id="more"></span>
 
-<p>循环环链表典型例子：约瑟夫问题（以下使用单向循环链表实现）</p>
+<p>数组优点：</p>
 <ul>
-<li><p>问题描述：有n个小孩围成一圈，给他们依次编号为k（1&lt;&#x3D;k&lt;&#x3D;n），从编号为1的小孩开始报数，数到第m个小孩出列，然后从出列的下一个小孩重新开始报数，数到第m个小孩又出列，…，如此反复直到所有的小孩全部出列为止，求整个出列序列。<br>如当n&#x3D;6，m&#x3D;5时的出列序列是5，4，6，2，3，1。</p>
-</li>
-<li><p>解决思路：用一个不带头结点的循环链表来处理约瑟夫问题</p>
-<p>  先构成一个有n个结点的循环链表，然后由k结点起从1开始计数，计到m时，对应结点从链表中删除，然后再从被删除结点的下一个结点又从1开始计数， 直到最后一个结点从链表中删除算法结束。</p>
-</li>
+<li>随机存取，随机访问数据，查询效率高，O(1)</li>
+<li>存储密度高，每个结点只存储数据元素（相对于链表）</li>
 </ul>
+<p>数组缺点：</p>
+<ul>
+<li>创建时需固定数组长度，易造成空间浪费或不足，不足后期扩容效率低；</li>
+<li>除尾部外其他位置频繁的插入和删除数据，效率低。</li>
+</ul>
+<hr>
+<p>动态数组：</p>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 动态数组</span></span><br><span class="line"><span class="comment">* <span class="doctag">@author</span> zzr</span></span><br><span class="line"><span class="comment">* <span class="doctag">@create</span> 2023-08-01-21:53</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DynamicArray</span> <span class="keyword">implements</span> <span class="title class_">Iterable</span>&lt;Integer&gt;&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span>[] array=&#123;&#125;;<span class="comment">//静态数组</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> size=<span class="number">0</span>;<span class="comment">//元素个数</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> capacity=<span class="number">10</span>;<span class="comment">//容量</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//扩容</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">grow</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (size==<span class="number">0</span>)&#123;<span class="comment">//懒加载</span></span><br><span class="line">            array=<span class="keyword">new</span> <span class="title class_">int</span>[capacity];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (size==capacity)&#123;</span><br><span class="line">            capacity+=capacity&gt;&gt;<span class="number">1</span>;<span class="comment">//容量1.5倍</span></span><br><span class="line">            <span class="type">int</span>[] newArray=<span class="keyword">new</span> <span class="title class_">int</span>[capacity];</span><br><span class="line">            System.arraycopy(array,<span class="number">0</span>,newArray,<span class="number">0</span>,size);</span><br><span class="line">            array=newArray;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//在末尾添加</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> element)</span>&#123;</span><br><span class="line">        add(size,element);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//在任意位置添加</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> index,<span class="type">int</span> element)</span>&#123;</span><br><span class="line">        grow();</span><br><span class="line">        <span class="keyword">if</span> (index&gt;=<span class="number">0</span>&amp;&amp;index&lt;=size) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index &gt;= <span class="number">0</span> &amp;&amp; index &lt; size) &#123;</span><br><span class="line">                System.arraycopy(array, index, array, index + <span class="number">1</span>, size - index);</span><br><span class="line">            &#125;</span><br><span class="line">            array[index] = element;</span><br><span class="line">            size++;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;输入的插入位置不合法！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取索引位置的值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (index&gt;=<span class="number">0</span>&amp;&amp;index&lt;size) &#123;</span><br><span class="line">            <span class="keyword">return</span> array[index];</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;输入的索引不合法！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//末尾删除元素</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">remove</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> remove(size-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除元素</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">remove</span><span class="params">(<span class="type">int</span> index)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (index&gt;=<span class="number">0</span>&amp;&amp;index&lt;size) &#123;</span><br><span class="line">            <span class="type">int</span> remove=array[index];</span><br><span class="line">            System.arraycopy(array,index+<span class="number">1</span>,array,index,size-index-<span class="number">1</span>);</span><br><span class="line">            size--;</span><br><span class="line">            <span class="keyword">return</span> remove;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;输入的索引不合法！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历</span></span><br><span class="line">    <span class="comment">//函数式接口</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">foreach</span><span class="params">(Consumer&lt;Integer&gt; consumer)</span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">            consumer.accept(array[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//迭代器</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Iterator&lt;Integer&gt; <span class="title function_">iterator</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Iterator</span>&lt;Integer&gt;() &#123;</span><br><span class="line">            <span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">hasNext</span><span class="params">()</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> i&lt;size;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> Integer <span class="title function_">next</span><span class="params">()</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> array[i++];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//流</span></span><br><span class="line">    <span class="keyword">public</span> IntStream <span class="title function_">stream</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> IntStream.of(Arrays.copyOfRange(array,<span class="number">0</span>,size));<span class="comment">//把数组转为流</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<hr>
+<p>Java 动态数组：</p>
 <ol>
-<li><p>定义小孩结点类（定义单向循环链表结点类）</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Boy</span> &#123;</span><br><span class="line">    <span class="type">int</span> no;<span class="comment">//编号</span></span><br><span class="line">    Boy next;<span class="comment">//指向下一个小孩</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Boy</span><span class="params">(<span class="type">int</span> no)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.no = no;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>定义小孩结点围成的环（定义单向循环链表类）</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CircularLinkList</span>	&#123;  </span><br><span class="line">    Boy first;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>方法实现</p>
-</li>
-</ol>
+<li><p>ArrayList</p>
+<p> 继承关系：</p>
 <ul>
-<li><p>把小孩添加进环（添加结点进单向循环链表）</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">num 小孩编号</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addBoy</span><span class="params">(<span class="type">int</span> num)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (num &lt; <span class="number">1</span>) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;输入的num值不正确，请重新输入&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">Boy</span> <span class="variable">curBoy</span> <span class="operator">=</span> <span class="literal">null</span>;<span class="comment">//辅助指针</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= num; i++) &#123;</span><br><span class="line">        <span class="type">Boy</span> <span class="variable">boy</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Boy</span>(i);</span><br><span class="line">        <span class="comment">//先形成单向列表</span></span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">1</span>) &#123;</span><br><span class="line">            first = boy;<span class="comment">//指向第一个小孩，方便最后一个节点指向第一个，形成环状</span></span><br><span class="line">            first.next = first;<span class="comment">//与自己形成环状</span></span><br><span class="line">            curBoy = first;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            curBoy.next = boy;<span class="comment">//链接下一个节点</span></span><br><span class="line">            boy.next = first;<span class="comment">//形成环状</span></span><br><span class="line">            curBoy = boy;<span class="comment">//curBoy下移</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>小孩报数出队列（删除结点）</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 思路：定义一个辅助指针，置于first前一个节点，数count下，两指针一起移动count-1次，因为自己需数一下，first指向的即是需要出列的小孩</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> being 从第几个小孩开始数</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> count 数多少下</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">countBoy</span><span class="params">(<span class="type">int</span> being, <span class="type">int</span> count)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (being &lt; <span class="number">1</span>||first==<span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;输入的数据错误&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Boy temp=first;</span><br><span class="line">    <span class="comment">//先把temp指向最后一个节点</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (temp.next==first) &#123;<span class="comment">//最后</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        temp=temp.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//到达开始数数的位置</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span><span class="number">0</span>; i &lt; being-<span class="number">1</span>; i++) &#123;</span><br><span class="line">        first=first.next;</span><br><span class="line">        temp=temp.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span> (first==temp)&#123;<span class="comment">//只有一个小孩</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//数count-1下</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span><span class="number">0</span>; i &lt; count-<span class="number">1</span>; i++) &#123;</span><br><span class="line">            first=first.next;</span><br><span class="line">            temp=temp.next;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(first.no);</span><br><span class="line">        <span class="comment">//小孩出圈（删除小孩）</span></span><br><span class="line">        first=first.next;<span class="comment">//first下移</span></span><br><span class="line">        temp.next=first;<span class="comment">//temp的next域指向first</span></span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(first.no);<span class="comment">//最后小孩的编号</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>打印出队编号序列（遍历单向循环链表）</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">list</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">Boy</span> <span class="variable">curBoy</span> <span class="operator">=</span> first;</span><br><span class="line">    <span class="keyword">if</span> (first == <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;链表为空&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;小孩编号：&quot;</span> + curBoy.no);</span><br><span class="line">        <span class="keyword">if</span> (curBoy.next == first) &#123;<span class="comment">//到最后</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        curBoy = curBoy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<hr>
-<p>顺序表和链表比较：</p>
-<ul>
-<li><p>顺序表的存储密度为1，而链表的存储密度小于1。仅从存储密度看，顺序表的存储空间利用率高。（存储密度&#x3D;结点中数据本身占用的存储量&#x2F;整个结点占用的存储量）（存储密度越大，存储空间的利用率就越高）</p>
-</li>
-<li><p>顺序表需要预先分配空间，所以数据占用一整片地址连续的内存空间，如果分配的空间过小，易出现上溢出，需要扩展空间导致大量元素移动而降低效率；如果分配的空间过大，会导致空间空闲而浪费。而链表的存储空间是动态分配的，只要内存有空闲，就不会出现上溢出。</p>
-</li>
-</ul>
-<p>结论：当线性表的长度变化不大，易于事先确定的情况下，为了节省存储空间，宜采用顺序表作为存储结构。当线性表的长度变化较大，难以估计其存储大小时，为了节省存储空间，宜采用链表作为存储结构。</p>
-<ul>
-<li><p>顺序表具有随机存取特性，给定序号查找对应的元素值的时间为O(1)，而链表不具有随机存取特性，只能顺序访问，给定序号查找对应的元素值的时间为O(n)。</p>
-</li>
-<li><p>在顺序表中插入和删除操作时，通常需要平均移动半个表的元素。而在链表中插入和删除操作仅仅需要修改相关结点的指针成员，不必移动结点。</p>
-</li>
-</ul>
-<p>结论：若线性表的运算主要是查找，很少做插入和删除操作，宜采用顺序表作为存储结构。若频繁地做插入和删除操作，宜采用链表作为存储结构。</p>
-<hr>
-<p>Java API链表相关容器：LinkedList</p>
-<p>继承关系：</p>
-<ul>
-<li><p>Iterator 接口：主要用于遍历输出</p>
-<ul>
+<li>Iterator 接口：主要用于遍历输出<ul>
 <li>Collection接口<ul>
 <li>List接口：存储有序的、可重复的数据<ul>
-<li>LinkedList 类</li>
+<li>ArrayList 类</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>Iterator 接口</p>
+</ul>
+<p> 特点：作为List接口的主要实现类；线程不安全的，效率高；底层使用Object[] elementData存储，可加入null</p>
+<p> 底层源码分析：</p>
+<p> 1） jdk 7情况下: ArrayList list &#x3D; new ArrayList();</p>
+<p> 底层创建了长度是10的Object[]数组elementData，如果添加导致elementData数组容量不够，则扩容。默认情况下，扩容为原来的容量的1.5倍，同时需要将原有数组中的数据复制到新的数组中。</p>
+<p> 结论：建议开发中使用带参的构造器：ArrayList list &#x3D; new ArrayList(int capacity)</p>
+<p> 2） jdk 8中ArrayList的变化: ArrayList list &#x3D; new ArrayList();</p>
+<p> 底层Object[] elementData初始化为{}.并没创建长度为10的数组，第一次调用add()时，底层才创建了长度10的数组，并将数据添加到elementData中，后续的添加和扩容操作与jdk 7 无异。</p>
+<p> 3）小结：jdk7中的ArrayList的对象的创建类似于单例的饿汉式，而jdk8中的ArrayList的对象的创建类似于单例的懒汉式，延迟了数组的创建，节省内存。</p>
+<p> 常用方法：</p>
+<p> （1）boolean isEmpty()：如果列表不包含元素，则返回true。</p>
+<p> （2）int size()： 返回此列表中的元素个数。</p>
+<p> （3）add(E e) ：向列表的尾部添加指定的元素。</p>
+<p> （4）void add(int index, E element)：在列表的指定位置插入指定元素。</p>
+<p> （5）boolean contains(Object o)：如果列表包含指定的元素，则返回true。</p>
+<p> （6）E get(int index)：返回列表中指定位置的元素。</p>
+<p> （7）E set(int index, E element)：用指定元素替换列表中指定位置的元素。</p>
+<p> （8）int indexOf(Object o)：返回此列表中第一次出现的指定元素的索引。如果此列表不包含该元素，则返回-1。</p>
+<p> （9）int lastIndexOf(Object o)：返回此列表中最后出现的指定元素的索引。如果列表不包含此元素，则返回-1。</p>
+<p> （10）void clear()：从列表中移除所有元素。</p>
+<p> （11）E remove(int index)：移除列表中指定位置的元素。</p>
+<p> （12）boolean remove(Object o)：从此列表中移除第一次出现的指定元素（如果存在）。</p>
+</li>
+<li><p>vector</p>
+<p> 继承关系：</p>
 <ul>
+<li>Iterator 接口<ul>
 <li>Collection接口<ul>
-<li>Queue接口：队列<ul>
-<li>Deque接口：双端队列<ul>
-<li>LinkedList 类</li>
+<li>List接口<ul>
+<li>Vetcor 类</li>
 </ul>
 </li>
 </ul>
@@ -326,88 +312,10 @@
 </ul>
 </li>
 </ul>
+<p> 特点：作为List接口的古老实现类；线程安全的，效率低；底层使用Object[] elementData存储</p>
+<p> 底层源码分析：jdk7和jdk8中通过Vector()构造器创建对象时，底层都创建了长度为10的数组。在扩容方面，默认扩容为原来的数组长度的2倍。</p>
 </li>
-</ul>
-<p>特点：线程不安全；对于频繁的插入、删除操作，使用此类效率比ArrayList高；底层使用双向链表存储，可加入null。实现了Deque接口，可做为双端队列使用。</p>
-<p>底层源码分析：LinkedList list &#x3D; new LinkedList(); </p>
-<ul>
-<li><p>内部声明了Node类型的first和last属性，默认值为null</p>
-</li>
-<li><p>list.add(123);&#x2F;&#x2F;将123封装到Node中，创建了Node对象。</p>
-</li>
-<li><p>其中，Node定义为：</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Node</span>&lt;E&gt; &#123;</span><br><span class="line">    E item;</span><br><span class="line">    Node&lt;E&gt; next;</span><br><span class="line">    Node&lt;E&gt; prev;</span><br><span class="line"></span><br><span class="line">    Node(Node&lt;E&gt; prev, E element, Node&lt;E&gt; next) &#123;</span><br><span class="line">        <span class="built_in">this</span>.item = element;</span><br><span class="line">        <span class="built_in">this</span>.next = next;</span><br><span class="line">        <span class="built_in">this</span>.prev = prev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>  体现了LinkedList的双向链表的说法</p>
-</li>
-</ul>
-<p>常用方法：</p>
-<ul>
-<li><p>增:</p>
-<ul>
-<li>public boolean add(E e)，链表末尾添加元素，返回是否成功；</li>
-<li>public void add(int index, E element)，向指定位置插入元素；</li>
-<li>public boolean addAll(Collection&lt;? extends E&gt; c)，将一个集合的所有元素添加到链表后面，返回是否成功；</li>
-<li>public boolean addAll(int index, Collection&lt;? extends E&gt; c)，将一个集合的所有元素添加到链表的指定位置后面，返回是否成功；</li>
-<li>public void addFirst(E e)，添加到第一个元素；</li>
-<li>public void addLast(E e)，添加到最后一个元素；</li>
-<li>public boolean offer(E e)，向链表末尾添加元素，返回是否成功；</li>
-<li>public boolean offerFirst(E e)，头部插入元素，返回是否成功；</li>
-<li>public boolean offerLast(E e)，尾部插入元素，返回是否成功；</li>
-</ul>
-</li>
-<li><p>删:</p>
-<ul>
-<li>public void clear()，清空链表；</li>
-<li>public E removeFirst()，删除并返回第一个元素；</li>
-<li>public E removeLast()，删除并返回最后一个元素；</li>
-<li>public boolean remove(Object o)，删除某一元素，返回是否成功；</li>
-<li>public E remove(int index)，删除指定位置的元素；</li>
-<li>public E poll()，删除并返回第一个元素；</li>
-<li>public E remove()，删除并返回第一个元素；</li>
-</ul>
-</li>
-<li><p>查:</p>
-<ul>
-<li>public boolean contains(Object o)，判断是否含有某一元素；</li>
-<li>public E get(int index)，返回指定位置的元素；</li>
-<li>public E getFirst(), 返回第一个元素；</li>
-<li>public E getLast()，返回最后一个元素；</li>
-<li>public int indexOf(Object o)，查找指定元素从前往后第一次出现的索引；</li>
-<li>public int lastIndexOf(Object o)，查找指定元素最后一次出现的索引；</li>
-<li>public E peek()，返回第一个元素；</li>
-<li>public E element()，返回第一个元素；</li>
-<li>public E peekFirst()，返回头部元素；</li>
-<li>public E peekLast()，返回尾部元素；</li>
-</ul>
-</li>
-<li><p>改:</p>
-<ul>
-<li>public E set(int index, E element)，设置指定位置的元素；</li>
-</ul>
-</li>
-<li><p>其他:</p>
-<ul>
-<li>public Object clone()，克隆该列表；</li>
-<li>public Iterator&lt; E &gt; descendingIterator()，返回倒序迭代器；</li>
-<li>public int size()，返回链表元素个数；</li>
-<li>public ListIterator&lt; E &gt; listIterator(int index)，返回从指定位置开始到末尾的迭代器；</li>
-<li>public Object[] toArray()，返回一个由链表元素组成的数组；</li>
-<li>public&lt; T &gt; T[] toArray(T[] a)，返回一个由链表元素转换类型而成的数组；</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p>ArrayList 类和 LinkedList 类的比较</p>
-<ul>
-<li><p>ArrayList 与 LinkedList 都是 List 接口的实现类，因此都实现了 List 的所有未实现的方法，只是实现的方式有所不同</p>
-</li>
-<li><p>ArrayList 是基于动态数组数据结构的实现，访问元素速度优于 LinkedList。LinkedList 是基于链表数据结构的实现，占用的内存空间比较大，但在批量插入或删除数据时优于 ArrayList</p>
-</li>
-<li><p>对于快速访问对象的需求，使用 ArrayList 实现执行效率上会比较好。需要频繁向集合中插入和删除元素时，使用 LinkedList 类比 ArrayList 类效果高</p>
-</li>
-</ul>
-<hr>
+</ol>
 
     
 
@@ -422,7 +330,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://zzruei.github.io/2023/02/02/线性表-循环链表/" title="数据结构--循环链表" target="_blank">http://zzruei.github.io/2023/02/02/线性表-循环链表/</a>
+          <a href="http://zzruei.github.io/2023/01/11/数据结构-动态数组/" title="数据结构--动态数组" target="_blank">http://zzruei.github.io/2023/01/11/数据结构-动态数组/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -445,15 +353,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线性表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">循环链表</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态数组</a>
         		</li>
       		
 		</ul>
@@ -509,7 +409,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zzruei.github.io/2023/02/02/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zzruei.github.io/2023/01/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -524,20 +424,15 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/02/04/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E6%A0%88/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/01/11/mysql-%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          数据结构--栈
+          mysql用户与权限管理
         
       </div>
     </a>
   
-  
-    <a href="/2023/02/02/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E5%8F%8C%E9%93%BE%E8%A1%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构--双链表</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -681,10 +576,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">线性表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">顺序表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -849,6 +740,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">遍历，二叉树，二叉树遍历</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态数组</a>
               </li>
             
             <div class="clearfix"></div>
