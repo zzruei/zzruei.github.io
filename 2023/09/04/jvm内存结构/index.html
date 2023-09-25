@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zzruei.github.io">
-  <title>jvm内存结构 | zzruei小基地</title>
+  <title>jvm内存结构 | zzruei笔记</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
@@ -14,7 +14,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="jvm内存结构">
 <meta property="og:url" content="http://zzruei.github.io/2023/09/04/jvm%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/index.html">
-<meta property="og:site_name" content="zzruei小基地">
+<meta property="og:site_name" content="zzruei笔记">
 <meta property="og:description" content="线程私有：  程序计数器（PC Register）:保存下一条指令执行地址，不存在内存溢出问题，线程私有（cpu切片运行，需保证切回原线程继续运行后续代码）。 虚拟机栈（JVM Stacks）：线程运行时需要的内存空间，由多个栈帧组成，每调用一个方法对应一个栈帧（方法运行时所需要的内存）。虚拟机栈存放局部变量表、操作数栈、动态链接、方法出口等信息，存在内存溢出风险，线程私有（每个线程都有自己独立">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-09-04T12:24:11.044Z">
@@ -24,7 +24,7 @@
 <meta property="article:tag" content="jvm">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="zzruei小基地" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="zzruei笔记" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
