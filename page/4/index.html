@@ -192,6 +192,109 @@
             
 
   
+    <article id="post-设计模式--抽象工厂模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/044bdc9a59.html" target="_blank">设计模式--抽象工厂模式</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/044bdc9a59.html" class="archive-article-date">
+        <time datetime="2023-04-01T07:51:37.893Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-01</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>抽象工厂模式：是一种创建型设计模式，它提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类。（可以有多个工厂，每个具体工厂生产一组产品，这些产品共同构成了一个产品家族。每个工厂方法负责创建单个产品，并且每个工厂方法返回的产品都属于同一产品家族）</p>
+<p>优点：</p>
+<ol>
+<li>抽象工厂模式隐藏了具体产品的实现细节，使得代码更容易维护。</li>
+<li>由于每个具体工厂类只负责创建特定产品家族的对象，因此通过使用抽象工厂模式，可以确保系统中的所有产品都是兼容的。</li>
+<li>可以轻松地替换产品系列，因为生产产品的具体工厂是相互独立的，而且不需要修改客户端代码。</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>当需要添加新的产品族时，需要修改抽象工厂接口和所有的具体工厂类，这可能会导致一些风险。</li>
+<li>增加新的产品族和产品等级结构都比较困难，因为需要更改抽象工厂接口和所有的具体工厂类。</li>
+</ol>
+    
+    <a class="article-more-a" href="/2023/044bdc9a59.html#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">抽象工厂模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/044bdc9a59.html">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数据结构-并查集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -619,110 +722,6 @@
 
 
   
-    <article id="post-算法-排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/02b9b1def2.html" target="_blank">算法--排序</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/02b9b1def2.html" class="archive-article-date">
-        <time datetime="2023-02-18T12:47:30.530Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-18</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>排序</p>
-<ul>
-<li><a href="#1">直接插入排序</a></li>
-<li><a href="#2">希尔排序</a></li>
-<li><a href="#3">冒泡排序</a></li>
-<li><a href="#4">快速排序</a></li>
-<li><a href="#5">选择排序</a></li>
-<li><a href="#6">堆排序</a></li>
-<li><a href="#7">归并排序</a></li>
-<li><a href="#8">计数排序</a></li>
-<li><a href="#9">桶排序</a></li>
-<li><a href="#10">基数排序</a></li>
-</ul>
-    
-    <a class="article-more-a" href="/2023/02b9b1def2.html#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/02b9b1def2.html">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
@@ -1036,6 +1035,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">前缀树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">floyd多源最短路径</a>
               </li>
             
             <div class="clearfix"></div>

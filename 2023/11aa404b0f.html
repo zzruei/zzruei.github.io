@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zzruei.github.io">
-  <title>Archives: 2023 | zzruei笔记</title>
+  <title>算法--floyd多源最短路径 | zzruei笔记</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="这是zzr搭建的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zzruei笔记">
-<meta property="og:url" content="http://zzruei.github.io/archives/2023/page/2/index.html">
+  <meta name="description" content="floyd多源最短路径：可以解决每个顶点到其他顶点的最短路劲  不适用条件：出现负环 算法步骤：用二维数组记录顶点到其他顶点的最短路劲，dp[i][j]:表示i顶点到j顶点的最短路劲 初始化：自己到自己为0，其他根据边权进行赋值，无边的为无穷大 进行顶点个数轮数，每轮借助的顶点为k，除k外的其他顶点借助k这个顶点到达其他顶点，选取直通和借路到达两者较小的更新dp[i][j]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法--floyd多源最短路径">
+<meta property="og:url" content="http://zzruei.github.io/2023/11aa404b0f.html">
 <meta property="og:site_name" content="zzruei笔记">
-<meta property="og:description" content="这是zzr搭建的博客">
+<meta property="og:description" content="floyd多源最短路径：可以解决每个顶点到其他顶点的最短路劲  不适用条件：出现负环 算法步骤：用二维数组记录顶点到其他顶点的最短路劲，dp[i][j]:表示i顶点到j顶点的最短路劲 初始化：自己到自己为0，其他根据边权进行赋值，无边的为无穷大 进行顶点个数轮数，每轮借助的顶点为k，除k外的其他顶点借助k这个顶点到达其他顶点，选取直通和借路到达两者较小的更新dp[i][j]">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-15T06:11:11.550Z">
+<meta property="article:modified_time" content="2023-11-15T06:43:55.835Z">
 <meta property="article:author" content="zzr">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="floyd多源最短路径">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="zzruei笔记" type="application/atom+xml">
@@ -186,41 +190,100 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-算法-弗洛伊德多源最短路径" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/092d8a8292.html" class="archive-article-date">
-        <time datetime="2023-09-06T10:54:46.480Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/092d8a8292.html" target="_blank">算法--二分查找</a>
   
+    <h1 class="article-title" itemprop="name">
+      算法--floyd多源最短路径
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2023/11aa404b0f.html" class="archive-article-date">
+        <time datetime="2023-11-15T06:11:11.550Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-15</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">466字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>floyd多源最短路径：可以解决每个顶点到其他顶点的最短路劲</p>
+<ul>
+<li>不适用条件：出现负环</li>
+<li>算法步骤：用二维数组记录顶点到其他顶点的最短路劲，dp[i][j]:表示i顶点到j顶点的最短路劲<ul>
+<li>初始化：自己到自己为0，其他根据边权进行赋值，无边的为无穷大</li>
+<li>进行顶点个数轮数，每轮借助的顶点为k，除k外的其他顶点借助k这个顶点到达其他顶点，选取直通和借路到达两者较小的更新dp[i][j]</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * floyd多源最短路径</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> n 顶点个数</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> edges 边权集 &#123;&#123;from,to,weight&#125;&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">floyd</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span>[][] edges)</span>&#123;</span><br><span class="line">    <span class="type">int</span>[][] dp=<span class="keyword">new</span> <span class="title class_">int</span>[n][n];</span><br><span class="line">    <span class="comment">//初始化：自己到自己（对角线）为0，其他根据边权进行赋值，两顶点无边的为∞</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i!=j)&#123;</span><br><span class="line">                dp[i][j]=Integer.MAX_VALUE;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//例子为无向图：双向赋值</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span>[] edge : edges) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> edge[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> edge[<span class="number">1</span>];</span><br><span class="line">        dp[i][j]=edge[<span class="number">2</span>];</span><br><span class="line">        dp[j][i]=edge[<span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//需进行n轮，每轮除k外其他顶点借助k这个顶点到达其他顶点</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>; k &lt; n; k++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i!=j||i!=k) &#123;<span class="comment">//自己到自己或自己借助自己都无需进行（需要检查负环的时候去掉该条件）</span></span><br><span class="line">                    <span class="keyword">if</span> (dp[i][k] != Integer.MAX_VALUE &amp;&amp; dp[k][j] != Integer.MAX_VALUE) &#123;<span class="comment">//路可以连通</span></span><br><span class="line">                        <span class="comment">//直通和借路之间选择较小的</span></span><br><span class="line">                        dp[i][j] = Math.min(dp[i][j], dp[i][k] + dp[k][j]);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>检查负环：可以在正常进行n轮后，检查对角线是否存在小于0的，若存在，则存在负环。</p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          zzr
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://zzruei.github.io/2023/11aa404b0f.html" title="算法--floyd多源最短路径" target="_blank">http://zzruei.github.io/2023/11aa404b0f.html</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -230,217 +293,113 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二分查找</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">floyd多源最短路径</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zzruei.github.io/2023/11aa404b0f.html" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/0910cb2ec8.html" class="archive-article-date">
-        <time datetime="2023-09-04T12:24:11.044Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-04</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2023/11176bbd70.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构--字典树（前缀树）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/0910cb2ec8.html" target="_blank">jvm内存结构</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">java虚拟机</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/044380da32.html" class="archive-article-date">
-        <time datetime="2023-04-18T09:21:47.889Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/044380da32.html" target="_blank">设计模式--组合模式</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">组合模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/04ca35257c.html" class="archive-article-date">
-        <time datetime="2023-04-18T09:07:28.312Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/04ca35257c.html" target="_blank">设计模式--桥接模式</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">桥接模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/04f70eccfd.html" class="archive-article-date">
-        <time datetime="2023-04-18T08:36:25.487Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/04f70eccfd.html" target="_blank">设计模式--适配器模式</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">适配器模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2023/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2023/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2023/page/3/">3</a><a class="page-number" href="/archives/2023/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2023/page/7/">7</a><a class="extend next" rel="next" href="/archives/2023/page/3/">Next &amp;raquo;</a>
-    </nav>
-  
+
 
 
           </div>
@@ -481,8 +440,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
