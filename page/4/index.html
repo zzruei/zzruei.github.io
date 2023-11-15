@@ -192,6 +192,109 @@
             
 
   
+    <article id="post-设计模式--建造者模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/04fc4a952b.html" target="_blank">设计模式--建造者模式</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/04fc4a952b.html" class="archive-article-date">
+        <time datetime="2023-04-01T08:48:53.360Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-01</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>建造者模式：是一种创建型设计模式，它提供了一种将复杂对象的构建过程与其表示相分离的方法，从而使得同样的构建过程可以创建不同的表示。该模式通过将复杂对象的构建过程分解成多个简单的步骤，并定义了一个指导者类来按照特定顺序调用每个步骤，从而实现对象的创建（用于创建复杂的对象）</p>
+<p>建造者模式优点：</p>
+<ol>
+<li>客户端不必知道产品内部组成的细节，将产品本身与产品的创建过程解耦，使得相同的创建过程可以创建不同的产品对象</li>
+<li>每一个具体建造者都相对独立，与其他的具体建造者无关，因此可以很方便地替换具体建造者或增加新的具体建造者，扩展方便，符合开闭原则</li>
+<li>可以更加精细地控制产品的创建过程</li>
+</ol>
+<p>建造者模式缺点：</p>
+<ol>
+<li>建造者模式所创建的产品一般具有较多的共同点，其组成部分相似，如果产品之间的差异性很大，不适合使用建造者模式，因此其使用范围受到一定的限制</li>
+<li>如果产品的内部变化复杂，可能会需要定义很多具体建造者类来实现这种变化，导致系统变得很庞大，增加了系统的理解难度和运行成本</li>
+</ol>
+    
+    <a class="article-more-a" href="/2023/04fc4a952b.html#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">建造者模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/04fc4a952b.html">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-设计模式--抽象工厂模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -609,119 +712,6 @@
 
 
   
-    <article id="post-数据库设计（E-R图）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/0363c656b3.html" target="_blank">数据库设计--E-R图</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/0363c656b3.html" class="archive-article-date">
-        <time datetime="2023-03-18T13:46:05.679Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-18</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>数据库设计：</p>
-<p>①画E-R图</p>
-<p>②E-R图确定关系模型</p>
-<p>E-R图：实体-联系图</p>
-<p>E-R图3个要素：实体，属性，联系</p>
-<ul>
-<li>实体：用矩形表示</li>
-<li>属性：用椭圆形表示</li>
-<li>联系：用菱形表示</li>
-<li>用实线连接实体、属性、联系，并标明关联关系</li>
-</ul>
-<p>实体与实体之间关联关系：</p>
-<ul>
-<li>1对1</li>
-<li>1对多（1对n）</li>
-<li>多对多（n对m）</li>
-</ul>
-<p>关系模型：学生（<u>学号</u>，姓名，性别,出生日期）</p>
-    
-    <a class="article-more-a" href="/2023/0363c656b3.html#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">数据库设计</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">E-R图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">关系模型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/0363c656b3.html">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
@@ -1039,6 +1029,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">floyd多源最短路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">单源最短路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Dijkstra</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Bellman-Ford</a>
               </li>
             
             <div class="clearfix"></div>

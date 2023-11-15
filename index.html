@@ -192,6 +192,129 @@
             
 
   
+    <article id="post-算法-单源最短路劲" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/11a33f222a.html" target="_blank">算法--单源最短路径</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/11a33f222a.html" class="archive-article-date">
+        <time datetime="2023-11-15T13:28:17.586Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-15</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>Dijkstra：只能处理正边</p>
+<ul>
+<li>不适用情况：存在负权边</li>
+<li>算法步骤：<ul>
+<li>初始化：起点最短路劲为0，其余为无穷大</li>
+<li>每次从未访问顶点中选择一个路劲值最短的顶点</li>
+<li>更新与该顶点相连的顶点的最短路劲</li>
+<li>重复2，3直到所有顶点都访问过</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Dijkstra单源最短路劲</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> n 顶点个数</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> edges 边权集 &#123;&#123;from,to,weight&#125;&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> start 起点</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">dijkstra</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span>[][] edges,<span class="type">int</span> start)</span>&#123;</span><br><span class="line">    <span class="type">int</span>[] res=<span class="keyword">new</span> <span class="title class_">int</span>[n];<span class="comment">//保存最短路劲值</span></span><br><span class="line">    <span class="type">boolean</span>[] isVisit=<span class="keyword">new</span> <span class="title class_">boolean</span>[n];<span class="comment">//记录顶点是否已访问</span></span><br><span class="line">    <span class="comment">//初始化：起点为0，其他为∞</span></span><br><span class="line">    res[start]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i!=start) &#123;</span><br><span class="line">            res[i] = Integer.MAX_VALUE;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="comment">//选取未访问中最小的一个顶点</span></span><br><span class="line">        <span class="type">int</span> vertex=-<span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">min</span> <span class="operator">=</span> Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!isVisit[i] &amp;&amp; res[i] &lt; min) &#123;</span><br><span class="line">                min = res[i];</span><br><span class="line">                vertex = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//所有顶点被访问，结束循环</span></span><br><span class="line">        <span class="keyword">if</span> (vertex==-<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//更新顶点邻居值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span>[] edge : edges) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">from</span> <span class="operator">=</span> edge[<span class="number">0</span>];</span><br><span class="line">            <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> edge[<span class="number">1</span>];</span><br><span class="line">            <span class="type">int</span> <span class="variable">weight</span> <span class="operator">=</span> edge[<span class="number">2</span>];</span><br><span class="line">            <span class="keyword">if</span> (from == vertex &amp;&amp; res[vertex] + weight&lt;res[end]) &#123;</span><br><span class="line">                res[end] = res[vertex] + weight;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//标记顶点被访问</span></span><br><span class="line">        isVisit[vertex] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Bellman-Ford：可以处理负边，但不能处理负环</p>
+<ul>
+<li>不适用情况：存在负环</li>
+<li>算法步骤：<ul>
+<li>初始化：起点最短路劲为0，其余为无穷大</li>
+<li>循环顶点个数-1次：每次循环，遍历所有边，如果终点最短路劲值大于起点最短路劲值+该边权值，则更新终点最短路劲值</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Bellman-Ford单源最短路劲</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> n 顶点个数</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> edges 边权集 &#123;&#123;from,to,weight&#125;&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> start 起点</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bellman</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span>[][] edges,<span class="type">int</span> start)</span>&#123;</span><br><span class="line">    <span class="type">int</span>[] res=<span class="keyword">new</span> <span class="title class_">int</span>[n];<span class="comment">//保存最短路劲值</span></span><br><span class="line">    <span class="comment">//初始化：起点为0，其他为∞</span></span><br><span class="line">    res[start]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i!=start) &#123;</span><br><span class="line">            res[i] = Integer.MAX_VALUE;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//顶点个数-1轮：每轮更新边到顶点的最短路劲值</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span>[] edge : edges) &#123;</span><br><span class="line">            <span class="type">int</span> from=edge[<span class="number">0</span>];</span><br><span class="line">            <span class="type">int</span> end=edge[<span class="number">1</span>];</span><br><span class="line">            <span class="type">int</span> weight=edge[<span class="number">2</span>];</span><br><span class="line">            <span class="keyword">if</span> (res[from]!=Integer.MAX_VALUE &amp;&amp; res[from] + weight &lt; res[end])&#123;<span class="comment">//起点为∞时，不更新</span></span><br><span class="line">                res[end]=res[from]+weight;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//多一轮：检测负环</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span>[] edge : edges) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">from</span> <span class="operator">=</span> edge[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> edge[<span class="number">1</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">weight</span> <span class="operator">=</span> edge[<span class="number">2</span>];</span><br><span class="line">        <span class="comment">//进入if则说明存在负环</span></span><br><span class="line">        <span class="keyword">if</span> (res[from]!=Integer.MAX_VALUE &amp;&amp; res[from] + weight &lt; res[end]) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;图中存在负权环&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在Bellman-Ford算法中，可以通过一轮额外的松弛操作来检测负环。在进行顶点个数-1轮的基本算法操作后，再进行一轮额外的松弛操作。如果在这轮松弛操作中，仍然存在顶点的最短路径值发生改变，则说明存在负环。因为在没有负环的情况下，进行n-1轮松弛操作可以得到最短路径值，如果仍然存在顶点的最短路径值发生改变，说明存在负环。</p>
+<hr>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">单源最短路径</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Dijkstra</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Bellman-Ford</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/11a33f222a.html">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-算法-弗洛伊德多源最短路径" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -600,117 +723,6 @@
 
 
   
-    <article id="post-算法-二叉树遍历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/09f0b58408.html" target="_blank">算法--二叉树遍历</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/09f0b58408.html" class="archive-article-date">
-        <time datetime="2023-09-11T00:44:15.884Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-11</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>二叉树遍历：</p>
-<ul>
-<li>深度遍历：<ul>
-<li>前序遍历：值左右</li>
-<li>中序遍历：左值右</li>
-<li>后续遍历：左右值</li>
-</ul>
-</li>
-<li>广度遍历：层序遍历</li>
-</ul>
-<p>前序遍历：（递归）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">preorderTraversal</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">        ArrayList&lt;Integer&gt; res=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (root==<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        res.add(root.val);<span class="comment">//值</span></span><br><span class="line">        preorderTraversal(root.left);<span class="comment">//左</span></span><br><span class="line">        preorderTraversal(root.right);<span class="comment">//右</span></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2023/09f0b58408.html#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">遍历</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">二叉树遍历</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/09f0b58408.html">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1028,6 +1040,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">floyd多源最短路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">单源最短路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Dijkstra</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Bellman-Ford</a>
               </li>
             
             <div class="clearfix"></div>
