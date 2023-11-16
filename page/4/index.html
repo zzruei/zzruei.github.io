@@ -192,6 +192,116 @@
             
 
   
+    <article id="post-设计模式--单例模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/046d67519e.html" target="_blank">设计模式--单例模式</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/046d67519e.html" class="archive-article-date">
+        <time datetime="2023-04-09T13:38:54.807Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-09</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>单例模式：是一种创建型设计模式，它保证一个类仅有一个实例，并提供一个全局访问点</p>
+<p>优点：</p>
+<ol>
+<li>提供了对唯一实例的受控访问</li>
+<li>可以节约系统资源，提高系统的性能</li>
+<li>允许可变数目的实例（多例类）</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>扩展困难（缺少抽象层）</li>
+<li>单例类的职责过重</li>
+<li>由于自动垃圾回收机制，可能会导致共享的单例对象的状态丢失</li>
+</ol>
+<p>适用场景：</p>
+<ol>
+<li>系统只需要一个实例对象，或者因为资源消耗太大而只允许创建一个对象</li>
+<li>客户调用类的单个实例只允许使用一个公共访问点，除了该公共访问点，不能通过其他途径访问该实例</li>
+</ol>
+<p>单例模式角色：Singleton：单例</p>
+    
+    <a class="article-more-a" href="/2023/046d67519e.html#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">单例模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/046d67519e.html">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-设计模式--建造者模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -602,116 +712,6 @@
 
 
   
-    <article id="post-设计模式-简单工厂模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/03bb9a1e1b.html" target="_blank">设计模式--简单工厂模式</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/03bb9a1e1b.html" class="archive-article-date">
-        <time datetime="2023-03-21T12:16:54.877Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>简单工厂模式：是一种创建型设计模式，它提供了一种创建对象的简单方法，而不需要直接实例化对象。简单工厂模式通过一个工厂类来创建对象，而不是通过直接调用构造函数来创建对象。（通过调用工厂的方法传入参数获取需要的实例）（只有一个工厂类，该工厂可以生产多种产品，适用于单一产品的创建）</p>
-<p>简单工厂模式的优点是：</p>
-<ol>
-<li><p>简化了对象的创建过程，客户端只需要传入参数，就可以获得所需的对象。</p>
-</li>
-<li><p>隐藏了对象的创建细节，客户端不需要知道具体的实现细节。</p>
-</li>
-<li><p>可以通过工厂类来控制对象的创建，实现了解耦。</p>
-</li>
-</ol>
-<p>简单工厂模式的缺点是：</p>
-<ol>
-<li><p>工厂类负责创建所有的对象，如果需要添加新的产品，就需要修改工厂类的代码，违反了开闭原则。</p>
-</li>
-<li><p>工厂类的职责过重，一旦工厂类出现问题，整个系统就会受到影响。</p>
-</li>
-<li><p>简单工厂模式只能创建固定类型的对象，无法创建复杂对象。</p>
-</li>
-</ol>
-    
-    <a class="article-more-a" href="/2023/03bb9a1e1b.html#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">简单工厂模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/03bb9a1e1b.html">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
@@ -1041,6 +1041,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Bellman-Ford</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
               </li>
             
             <div class="clearfix"></div>
