@@ -192,6 +192,106 @@
             
 
   
+    <article id="post-算法-弗洛伊德多源最短路径" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/11aa404b0f.html" target="_blank">算法--floyd多源最短路径</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/11aa404b0f.html" class="archive-article-date">
+        <time datetime="2023-11-15T06:11:11.550Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-15</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>floyd多源最短路径：可以解决每个顶点到其他顶点的最短路劲</p>
+<ul>
+<li>不适用条件：出现负环</li>
+<li>算法步骤：用二维数组记录顶点到其他顶点的最短路劲，dp[i][j]:表示i顶点到j顶点的最短路劲<ul>
+<li>初始化：自己到自己为0，其他根据边权进行赋值，无边的为无穷大</li>
+<li>进行顶点个数轮数，每轮借助的顶点为k，除k外的其他顶点借助k这个顶点到达其他顶点，选取直通和借路到达两者较小的更新dp[i][j]</li>
+</ul>
+</li>
+</ul>
+    
+    <a class="article-more-a" href="/2023/11aa404b0f.html#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">floyd多源最短路径</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/11aa404b0f.html">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数据结构-字典树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -611,103 +711,6 @@
 
 
   
-    <article id="post-算法-二分查找" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/092d8a8292.html" target="_blank">算法--二分查找</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/092d8a8292.html" class="archive-article-date">
-        <time datetime="2023-09-06T10:54:46.480Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>二分查找：</p>
-<ul>
-<li>前提：数组有序</li>
-<li>时间复杂度：O(log2 n)</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">    <span class="type">int</span> l=<span class="number">0</span>,r=nums.length-<span class="number">1</span>;<span class="comment">//初始l指向第一个元素，r指向最后一个元素</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;=r)&#123;<span class="comment">//l和r指向的元素都作为比较元素，l=r时，需进行比较</span></span><br><span class="line">        <span class="type">int</span> m=(l+r)&gt;&gt;&gt;<span class="number">1</span>;<span class="comment">//防止溢出</span></span><br><span class="line">        <span class="keyword">if</span> (target&lt;nums[m])&#123;<span class="comment">//目标值比中间值小，r指针往左缩小范围</span></span><br><span class="line">            r=m-<span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (nums[m]&lt;target)&#123;<span class="comment">//目标值比中间值大，l指针往右缩小范围</span></span><br><span class="line">            l=m+<span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;<span class="comment">//目标值与中间值相等，则找到</span></span><br><span class="line">            <span class="keyword">return</span> m;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;<span class="comment">//如果为return l;当targer在数组中不存在时返回在数组中的插入位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2023/092d8a8292.html#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二分查找</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/092d8a8292.html">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -1053,6 +1056,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">差分</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">IoC</a>
               </li>
             
             <div class="clearfix"></div>
