@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zzruei.github.io">
-  <title>Archives: 2023/9 | zzruei笔记</title>
+  <title>Spring-AOP | zzruei笔记</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="这是zzr搭建的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zzruei笔记">
-<meta property="og:url" content="http://zzruei.github.io/archives/2023/09/index.html">
+  <meta name="description" content="AOP:Aspect Oriented Programming,面向切面编程,是横向的对不同事物的处理方式。 Spring AOP依赖包： 12345&lt;dependency&gt;    &lt;groupId&gt;org.aspectj&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;aspectjweaver&lt;&#x2F;artifactId&gt;    &amp;lt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring-AOP">
+<meta property="og:url" content="http://zzruei.github.io/2023/1297375e6e.html">
 <meta property="og:site_name" content="zzruei笔记">
-<meta property="og:description" content="这是zzr搭建的博客">
+<meta property="og:description" content="AOP:Aspect Oriented Programming,面向切面编程,是横向的对不同事物的处理方式。 Spring AOP依赖包： 12345&lt;dependency&gt;    &lt;groupId&gt;org.aspectj&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;aspectjweaver&lt;&#x2F;artifactId&gt;    &amp;lt">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-10T12:13:02.174Z">
+<meta property="article:modified_time" content="2023-12-11T01:30:20.297Z">
 <meta property="article:author" content="zzr">
+<meta property="article:tag" content="Spring">
+<meta property="article:tag" content="AOP">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="zzruei笔记" type="application/atom+xml">
@@ -186,171 +190,275 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Spring-AOP" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/09f0b58408.html" class="archive-article-date">
-        <time datetime="2023-09-11T00:44:15.884Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-11</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/09f0b58408.html" target="_blank">算法--二叉树遍历</a>
   
+    <h1 class="article-title" itemprop="name">
+      Spring-AOP
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2023/1297375e6e.html" class="archive-article-date">
+        <time datetime="2023-12-10T12:13:02.174Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-10</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.7k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">7分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>AOP:Aspect Oriented Programming,面向切面编程,是横向的对不同事物的处理方式。</p>
+<p>Spring AOP依赖包：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.aspectj<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aspectjweaver<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.9.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>Spring AOP配置方式：</p>
+<ul>
+<li><p>xml配置（需要aop命名空间）</p>
+<ul>
+<li><p>aspect：通知类不需要实现相应通知接口，配置时指定通知类型</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--配置目标类,内部的方法是连接点--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;userService&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.zzr.service.impl.UserServiceImpl&quot;</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!--配置通知类,内部的方法是增强方法--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">“myAdvice</span>&quot; <span class="attr">class</span>=<span class="string">&quot;com.zzr.advice.MyAdvice&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aop:config</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--配置切点表达式,对哪些方法进行增强 (筛选)--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">aop:pointcut</span> <span class="attr">id</span>=<span class="string">&quot;myPointcut&quot;</span> <span class="attr">expression</span>=<span class="string">&quot;execution(void com.zzr.service.impl.UserServiceImpl.show())&quot;</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--切面=切点+通知--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">aop:aspect</span> <span class="attr">ref</span>=<span class="string">&quot;myAdvice&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--指定前置通知方法是beforeAdvice--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">aop:before</span> <span class="attr">method</span>=<span class="string">&quot;beforeAdvice&quot;</span> <span class="attr">pointcut-ref</span>=<span class="string">&quot;myPointcut&quot;</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--指定后置通知方法是afterAdvice--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">aop:after-returning</span> <span class="attr">method</span>=<span class="string">&quot;afterAdvice&quot;</span> <span class="attr">pointcut-ref</span>=<span class="string">&quot;myPointcut&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">aop:aspect</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">aop:config</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>advisor：通知类实现对应通知接口（如MethodBeforeAdvice（前置通知）, AfterReturningAdvice（后置通知），MethodInterceptor（环绕通知）），配置时不用指定通知类型</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--配置目标类,内部的方法是连接点--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;userService&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.zzr.service.impl.UserServiceImpl&quot;</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!--配置通知类,内部的方法是增强方法--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">advices</span>&quot; <span class="attr">class</span>=<span class="string">&quot;com.zzr.advice.advices&quot;</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 使用advisor配置 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aop:config</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- advice-ref:通知Bean的id --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">aop:advisor</span> <span class="attr">advice-ref</span>=<span class="string">&quot;advices&quot;</span> <span class="attr">pointcut</span>=<span class="string">&quot;execution(void com.zzr.service.impl.UserServiceImpl.show())&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">aop:config</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>两种配置方式对比：</p>
+<ul>
+<li>一个advisor只能配置一个固定通知和一个切点表达式；</li>
+<li>一个aspect可以配置多个通知和多个切点表达式任意组合，粒度更细。</li>
+<li>如果通知类型多、允许随意搭配情况下可以使用aspect进行配置；</li>
+<li>如果通知类型单一、且通知类中通知方法一次性都会使用到的情况下可以使用advisor进行配置；</li>
+<li>在通知类型已经固定，不用人为指定通知类型时，可以使用advisor进行配置，例如Spring事务控制的配置；</li>
+</ul>
+</li>
+<li><p>切点表达式：execution([访问修饰符]返回值类型 包名.类名.方法名(参数))</p>
+<ul>
+<li>访问修饰符可以省略不写；</li>
+<li>返回值类型、某一级包名、类名、方法名 可以使用 * 表示任意；</li>
+<li>包名与类名之间使用单点 . 表示该包下的类，使用双点 .. 表示该包及其子包下的类；</li>
+<li>参数列表可以使用两个点 .. 表示任意参数。</li>
+<li>例如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//表示访问修饰符为public、无返回值、在com.zzr.aop包下的TargetImpl类的无参方法show</span><br><span class="line">execution(public void com.zzr.aop.TargetImpl.show())</span><br><span class="line">//表述com.zzr.aop包下的TargetImpl类的任意方法</span><br><span class="line">execution(* com.zzr.aop.TargetImpl.*(..))</span><br><span class="line">//表示com.zzr.aop包下的任意类的任意方法</span><br><span class="line">execution(* com.zzr.aop.*.*(..))</span><br><span class="line">//表示com.zzr.aop包及其子包下的任意类的任意方法</span><br><span class="line">execution(* com.zzr.aop..*.*(..))</span><br><span class="line">//表示任意包中的任意类的任意方法</span><br><span class="line">execution(* *..*.*(..))</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>通知类型：</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">前置通知 &lt; aop:before &gt; 目标方法执行之前执行</span><br><span class="line">后置通知 &lt; aop:after-returning &gt; 目标方法执行之后执行，目标方法异常时，不在执行</span><br><span class="line">环绕通知 &lt; aop:around &gt; 目标方法执行前后执行，目标方法异常时，环绕后方法不在执行</span><br><span class="line">异常通知 &lt; aop:after-throwing &gt; 目标方法抛出异常时执行</span><br><span class="line">最终通知 &lt; aop:after &gt; 不管目标方法是否有异常，最终都会执行</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>注解配置：</p>
+<ul>
+<li><p>通知类加@Aspect </p>
+</li>
+<li><p>在通知类中的通知方法加对应通知注解和参数对应的切点表达式</p>
+</li>
+<li><p>Spring核心配置类加@EnableAspectJAutoProxy</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Aspect</span><span class="comment">//第一步</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AnnoAdvice</span> &#123;</span><br><span class="line">    <span class="comment">//第二步</span></span><br><span class="line">    <span class="comment">//切点表达式抽取</span></span><br><span class="line">    <span class="meta">@Pointcut(&quot;execution(* com.zzr.aop.*.*(..))&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pointcut</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    <span class="comment">//前置通知</span></span><br><span class="line">    <span class="meta">@Before(&quot;pointcut()&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">before</span><span class="params">(JoinPoint joinPoint)</span>&#123;&#125;</span><br><span class="line">    <span class="comment">//后置通知</span></span><br><span class="line">    <span class="meta">@AfterReturning(&quot;AnnoAdvice.pointcut()&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">AfterReturning</span><span class="params">(JoinPoint joinPoint)</span>&#123;&#125;</span><br><span class="line">    <span class="comment">//环绕通知</span></span><br><span class="line">    <span class="meta">@Around(&quot;execution(* com.zzr.aop.*.*(..))&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">around</span><span class="params">(ProceedingJoinPoint joinPoint)</span> <span class="keyword">throws</span> Throwable &#123;&#125;</span><br><span class="line">    <span class="comment">//异常通知</span></span><br><span class="line">    <span class="meta">@AfterThrowing(&quot;pointcut()&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">AfterThrowing</span><span class="params">(JoinPoint joinPoint)</span>&#123;&#125;</span><br><span class="line">    <span class="comment">//最终通知</span></span><br><span class="line">    <span class="meta">@After(&quot;pointcut()&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">After</span><span class="params">(JoinPoint joinPoint)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ComponentScan(&quot;com.zzr.aop&quot;)</span></span><br><span class="line"><span class="meta">@EnableAspectJAutoProxy</span> <span class="comment">//第三步 配置文件用&lt;aop:aspectj-autoproxy/&gt;</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ApplicationContextConfig</span> &#123;&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<p>Spring AOP原理：利用动态代理技术,通过解析aop对应标签或注解，向Spring容器注入一个AspectJAwareAdvisorAutoProxyCreator的BeanPostProcessor,在该BeanPostProcessor中完成代理对象的生成</p>
+<ul>
+<li>动态代理两种方式<ul>
+<li>基于接口的动态代理：JDK 动态代理技术（有接口默认）</li>
+<li>基于子类的动态代理：Cglib 动态代理技术 （手动配置&lt;aop:config proxy-target-class&#x3D;“true”&gt;强制使用Cglib方式）</li>
+</ul>
+</li>
+</ul>
+<p>Spring声明式事务：</p>
+<ul>
+<li><p>xml配置：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--事务命名空间--&gt;</span></span><br><span class="line">xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot; </span><br><span class="line">http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--平台事务管理器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;transactionManager&quot;</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;dataSource&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--Spring提供的事务通知--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tx:advice</span> <span class="attr">id</span>=<span class="string">&quot;myAdvice&quot;</span> <span class="attr">transaction-manager</span>=<span class="string">&quot;transactionManager&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tx:attributes</span>&gt;</span>  <span class="comment">&lt;!--事务属性--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tx:method</span> <span class="attr">name</span>=<span class="string">&quot;方法名称&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">isolation</span>=<span class="string">&quot;隔离级别&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">propagation</span>=<span class="string">&quot;传播行为&quot;</span>  &lt;!<span class="attr">--主要解决是A方法调用B方法时</span>，<span class="attr">事务的传播方式问题</span>(<span class="attr">业务调业务</span>，<span class="attr">事务嵌套问题</span>)<span class="attr">--</span>&gt;</span></span><br><span class="line">              read-only=&quot;只读状态&quot;</span><br><span class="line">              timeout=&quot;超时时间&quot;/&gt;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">tx:attributes</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tx:advice</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">aop:config</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">aop:advisor</span> <span class="attr">advice-ref</span>=<span class="string">&quot;myAdvice&quot;</span> <span class="attr">pointcut</span>=<span class="string">&quot;execution(* com.itheima.service.impl.*.*(..))&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">aop:config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注解配置：</p>
+<ul>
+<li>对应业务方法加@Transactional注解和参数对应的事务属性</li>
+<li>核心配置类加@EnableTransactionManagement注解开启事务</li>
+<li>配置PlatformTransactionManager平台事务管理器（需要数据源）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service(&quot;accountService&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AccoutServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">AccountService</span> &#123;</span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  <span class="keyword">private</span> AccountMapper accountMapper;</span><br><span class="line">  <span class="comment">//&lt;tx:method name=&quot;*&quot; isolation=&quot;REPEATABLE_READ&quot; propagation=&quot;REQUIRED“/&gt;</span></span><br><span class="line">  <span class="meta">@Transactional(isolation = Isolation.REPEATABLE_READ,propagation = Propagation.REQUIRED,readOnly = false,timeout = 5)</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">transferMoney</span><span class="params">(String decrAccountName, String incrAccountName, <span class="type">int</span> money)</span> &#123;</span><br><span class="line">    accountMapper.decrMoney(decrAccountName,money); <span class="comment">//转出钱</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>/<span class="number">0</span>; <span class="comment">//模拟某些逻辑产生的异常</span></span><br><span class="line">    accountMapper.incrMoney(incrAccountName,money); <span class="comment">//转入钱</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ComponentScan(&quot;com.itheima.service&quot;)</span></span><br><span class="line"><span class="meta">@PropertySource(&quot;classpath:jdbc.properties&quot;)</span></span><br><span class="line"><span class="meta">@MapperScan(&quot;com.itheima.mapper&quot;)</span></span><br><span class="line"><span class="meta">@EnableTransactionManagement</span> <span class="comment">//xml标签为&lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot;/&gt;</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ApplicationContextConfig</span> &#123;</span><br><span class="line">  <span class="meta">@Bean</span></span><br><span class="line">  <span class="keyword">public</span> PlatformTransactionManager <span class="title function_">tansactionManager</span><span class="params">(DataSource dataSource)</span>&#123;</span><br><span class="line">    <span class="type">DataSourceTransactionManager</span> <span class="variable">transactionManager</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DataSourceTransactionManager</span>();</span><br><span class="line">    transactionManager.setDataSource(dataSource);</span><br><span class="line">    <span class="keyword">return</span> transactionManager;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">// ... 省略其他配置 ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<p>Spring事务原理：通过标签或注解解析，向Spring容器注入一个TransactionInterceptor，TransactionInterceptor实现了MethodInterceptor（环绕通知接口），TransactionInterceptor中的invoke方法会被执行，跟踪invoke方法，最终会看到事务的开启和提交</p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          zzr
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://zzruei.github.io/2023/1297375e6e.html" title="Spring-AOP" target="_blank">http://zzruei.github.io/2023/1297375e6e.html</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">遍历</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">二叉树遍历</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AOP</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://zzruei.github.io/2023/1297375e6e.html" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/092d8a8292.html" class="archive-article-date">
-        <time datetime="2023-09-06T10:54:46.480Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2023/12881e6aaa.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring-IoC</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/092d8a8292.html" target="_blank">算法--二分查找</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二分查找</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2023/0910cb2ec8.html" class="archive-article-date">
-        <time datetime="2023-09-04T12:24:11.044Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-04</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2023/0910cb2ec8.html" target="_blank">jvm内存结构</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">java虚拟机</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
+
 
 
           </div>
@@ -391,8 +499,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
