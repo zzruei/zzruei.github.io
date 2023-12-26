@@ -192,6 +192,119 @@
             
 
   
+    <article id="post-数据结构-堆" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/10fe6957ee.html" target="_blank">数据结构--堆</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/10fe6957ee.html" class="archive-article-date">
+        <time datetime="2023-10-21T15:10:41.993Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-21</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>堆(一颗完全二叉树)：顺序存储结构，可用数组存储</p>
+<ul>
+<li>大顶堆：每个父结点的值都大于其左右孩子的值</li>
+<li>小顶堆：每个父结点的值都小于其左右孩子的值</li>
+</ul>
+<p>数组中某个元素的父结点及其左右孩子索引:</p>
+<ul>
+<li>父节点索引为i<ul>
+<li>左孩子索引：2*i+1</li>
+<li>右孩子索引：2*i+2（左孩子索引+1）</li>
+</ul>
+</li>
+<li>孩子索引为j<ul>
+<li>父节点索引：(j-1)&#x2F;2</li>
+</ul>
+</li>
+<li>最后一个非叶子结点索引：数组长度&#x2F;2-1</li>
+</ul>
+    
+    <a class="article-more-a" href="/2023/10fe6957ee.html#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">堆</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">优先队列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/10fe6957ee.html">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-算法-二叉树遍历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -602,110 +715,6 @@
 
 
   
-    <article id="post-设计模式--桥接模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04ca35257c.html" target="_blank">设计模式--桥接模式</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04ca35257c.html" class="archive-article-date">
-        <time datetime="2023-04-18T09:07:28.312Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-18</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>桥接模式：是一种结构型设计模式，它将抽象部分和实现部分分离，使它们可以独立变化。桥接模式通过组合的方式，将一个对象的实现和它的抽象分离开来，从而使它们可以独立地变化。</p>
-<p>在桥接模式中，抽象部分和实现部分都可以有多个变化的维度，它们通过一个桥接接口来连接。抽象部分和实现部分之间的桥接接口可以使用抽象类或接口来定义。</p>
-<p>桥接模式的优点：</p>
-<ul>
-<li>分离抽象部分和实现部分，使它们可以独立变化，提高了系统的灵活性和扩展性。</li>
-<li>桥接模式可以减少子类的个数，因为所有的实现部分都可以通过桥接接口来连接。</li>
-<li>桥接模式可以使系统更加稳定，因为抽象部分和实现部分都可以独立地进行变化，不会相互影响。</li>
-</ul>
-<p>桥接模式的缺点：</p>
-<ul>
-<li>桥接模式增加了系统的复杂度，因为需要定义抽象部分和实现部分之间的桥接接口。</li>
-<li>桥接模式需要额外的代码，因为需要定义抽象部分和实现部分的类和接口。</li>
-</ul>
-    
-    <a class="article-more-a" href="/2023/04ca35257c.html#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">桥接模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04ca35257c.html">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
@@ -1063,6 +1072,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">AOP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
               </li>
             
             <div class="clearfix"></div>
