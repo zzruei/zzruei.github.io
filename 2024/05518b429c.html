@@ -6,22 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zzruei.github.io">
-  <title>查询SQL优化--索引 | zzruei笔记</title>
+  <title>SQL优化--索引 | zzruei笔记</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="什么是索引？索引：高效获取数据的数据结构，针对某一字段建立索引，可以提高查询效率，减低数据排序成本，但同时也消耗磁盘空间，降低更新表的速度">
 <meta property="og:type" content="article">
-<meta property="og:title" content="查询SQL优化--索引">
+<meta property="og:title" content="SQL优化--索引">
 <meta property="og:url" content="http://zzruei.github.io/2024/05518b429c.html">
 <meta property="og:site_name" content="zzruei笔记">
 <meta property="og:description" content="什么是索引？索引：高效获取数据的数据结构，针对某一字段建立索引，可以提高查询效率，减低数据排序成本，但同时也消耗磁盘空间，降低更新表的速度">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-09T14:09:07.341Z">
-<meta property="article:modified_time" content="2024-05-09T14:36:25.698Z">
+<meta property="article:modified_time" content="2024-05-11T10:39:14.166Z">
 <meta property="article:author" content="zzr">
 <meta property="article:tag" content="SQL优化">
 <meta property="article:tag" content="索引">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="zzruei笔记" type="application/atom+xml">
@@ -197,7 +198,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      查询SQL优化--索引
+      SQL优化--索引
     </h1>
   
 
@@ -223,7 +224,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.5k字</span>
+      <span class="post-count">2.1k字</span>
     </span>
   </span>
 
@@ -232,7 +233,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">5分</span>
+      <span class="post-count">7分</span>
     </span>
   </span>
 </div>
@@ -370,6 +371,50 @@
 <li>如果索引列不能存储NULL值，请在创建表时使用NOT NULL约束它。当优化器知道每列是否包含 NULL值时，它可以更好地确定哪个索引最有效地用于查询</li>
 </ul>
 <hr>
+<h2 id="其他优化"><a href="#其他优化" class="headerlink" title="其他优化"></a>其他优化</h2><ol>
+<li><p>插入数据优化</p>
+<ul>
+<li><p>使用批量插入数据</p>
+</li>
+<li><p>手动控制事务（begin、commit）</p>
+</li>
+<li><p>主键顺序插入（不顺序插入可能导致页分裂，删除时可能出现页合并）</p>
+</li>
+<li><p>大数据量插入使用load指令进行插入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- 客户端连接服务端时，加上参数 -–local-infile</span><br><span class="line">mysql –-local-infile -u root -p</span><br><span class="line">-- 设置全局参数local_infile为1，开启从本地加载文件导入数据的开关</span><br><span class="line">set global local_infile = 1;</span><br><span class="line">-- 执行load指令将准备好的数据，加载到表结构中</span><br><span class="line">load data local infile &#x27;/root/sql1.log&#x27; into table tb_user fields</span><br><span class="line">terminated by &#x27;,&#x27; lines terminated by &#x27;\n&#x27; ;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>主键优化</p>
+<ul>
+<li>满足业务需求的情况下，尽量降低主键的长度</li>
+<li>插入数据时，尽量选择顺序插入，选择使用AUTO_INCREMENT自增主键</li>
+<li>尽量不要使用UUID做主键或者是其他自然主键，如身份证号</li>
+<li>业务操作时，避免对主键的修改</li>
+</ul>
+</li>
+<li><p>order by优化</p>
+<ul>
+<li>根据排序字段建立合适的索引，多字段排序时，也遵循最左前缀法则</li>
+<li>尽量使用覆盖索引 </li>
+<li>多字段排序, 一个升序一个降序，此时需要注意联合索引在创建时的规则（ASC&#x2F;DESC）</li>
+<li>如果不可避免的出现filesort（文件缓冲区排序），大数据量排序时，可以适当增大排序缓冲区大小 sort_buffer_size(默认256k)</li>
+</ul>
+</li>
+<li><p>group by优化：建立覆盖索引，遵循最左前缀法则</p>
+</li>
+<li><p>limit优化：进行limit分页查询，在查询时，越往后，分页查询效率越低（原因：mysql将分页前之前的所有数据进行排序，仅仅返回需要的数据。如执行 limit 2000000,10 ，此时需要MySQL排序前2000010 记录，仅仅返回 2000000 - 2000010 的记录，其他记录丢弃，查询排序的代价非常大），可以通过覆盖索引加子查询形式进行优化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from tb_sku t , (select id from tb_sku order by id</span><br><span class="line">limit 2000000,10) a where t.id = a.id;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>count优化：</p>
+<ul>
+<li>手动计数（借助于redis这样的数据库进行,但是如果是带条件的count又比较麻烦了）</li>
+<li>count(字段) &lt; count(主键 id) &lt; count(1) ≈ count( * )，所以尽量使用 count( * )</li>
+</ul>
+</li>
+<li><p>update优化：查询条件需要建立索引，有索引，行锁，无索引，表锁</p>
+</li>
+</ol>
+<hr>
 
     
 
@@ -384,7 +429,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://zzruei.github.io/2024/05518b429c.html" title="查询SQL优化--索引" target="_blank">http://zzruei.github.io/2024/05518b429c.html</a>
+          <a href="http://zzruei.github.io/2024/05518b429c.html" title="SQL优化--索引" target="_blank">http://zzruei.github.io/2024/05518b429c.html</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -408,6 +453,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">索引</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
         		</li>
       		
 		</ul>
@@ -878,6 +927,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">索引</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
             
             <div class="clearfix"></div>
